@@ -1,0 +1,62 @@
+name: Release Theme ZIP
+
+# Triggers whenever you push a version tag like v1.0.1 or v2.0.0
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Check out the repo
+      - name: Checkout theme
+        uses: actions/checkout@v4
+
+      # 2. Read the version from style.css
+      - name: Extract version from style.css
+        id: get_version
+        run: |
+          VERSION=$(grep -m1 'Version:' style.css | sed 's/.*Version:\s*//' | tr -d '[:space:]')
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "Detected theme version: $VERSION"
+
+      # 3. Create the ZIP — the folder inside must be named 'ojis-travels-theme'
+      #    so WordPress extracts it correctly.
+      - name: Create theme ZIP
+        run: |
+          cd ..
+          zip -r ojis-travels-theme.zip ojis-travels-theme \
+            --exclude "ojis-travels-theme/.git/*" \
+            --exclude "ojis-travels-theme/.github/*" \
+            --exclude "ojis-travels-theme/.gitignore" \
+            --exclude "ojis-travels-theme/node_modules/*" \
+            --exclude "ojis-travels-theme/*.zip"
+          echo "ZIP created: $(du -sh ojis-travels-theme.zip)"
+
+      # 4. Publish a GitHub Release and attach the ZIP as an asset
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: "OJIS Travels Theme v${{ steps.get_version.outputs.version }}"
+          body: |
+            ## OJIS Travels Theme v${{ steps.get_version.outputs.version }}
+
+            **Install / Update:**
+            1. Download `ojis-travels-theme.zip` below.
+            2. In WordPress: **Appearance → Themes → Add New → Upload Theme**.
+            3. Activate after upload.
+
+            **Auto-update:** If the GitHub Updater is active (included in the theme),
+            WordPress will detect this release and show an update notice automatically.
+
+            ---
+            *Developed by [eZeroAndOne.io](https://ezeroandone.io)*
+          files: ../ojis-travels-theme.zip
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,26 @@
+# WordPress / OS artefacts
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# Node (if Tailwind build is added later)
+node_modules/
+npm-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Build output
+dist/
+*.min.js.map
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Secrets / env
+.env
+.env.*
+wp-config.php
