@@ -7,6 +7,61 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <?php wp_head(); ?>
+    <?php
+    // ── Nav colour override ────────────────────────────────────────────────
+    // Tailwind CDN injects its stylesheet AFTER wp_head(), which means any
+    // class-based colour rule in main.css loses the cascade even with !important.
+    // A <style> block placed after wp_head() runs later than Tailwind's injection
+    // and uses high-specificity selectors + !important to guarantee the correct
+    // white/charcoal behaviour regardless of Tailwind's output.
+    $forest   = esc_attr( get_theme_mod( 'ojis_color_forest',   '#1B4D3E' ) );
+    $charcoal = esc_attr( get_theme_mod( 'ojis_color_charcoal', '#1A211E' ) );
+    $eco      = esc_attr( get_theme_mod( 'ojis_color_eco',      '#2ECC71' ) );
+    ?>
+    <style id="ojis-nav-colours">
+        /* ── Transparent header: white nav text ── */
+        #site-header .nav-link-item,
+        #site-header #desktop-nav .menu > li > a,
+        #site-header #desktop-nav ul li a {
+            color: rgba(255,255,255,0.92) !important;
+        }
+        #site-header .nav-link-item:hover,
+        #site-header #desktop-nav .menu > li > a:hover {
+            color: #fff !important;
+            background-color: rgba(255,255,255,0.12) !important;
+        }
+        #site-header .nav-link-item.nav-link-active,
+        #site-header .nav-link-item[aria-current="page"],
+        #site-header #desktop-nav .menu > li.current-menu-item > a,
+        #site-header #desktop-nav .menu > li.current_page_item > a {
+            color: <?php echo $eco; ?> !important;
+        }
+        /* Mobile hamburger: white when transparent */
+        #site-header .header-mobile-toggle {
+            color: rgba(255,255,255,0.92) !important;
+        }
+        /* ── Scrolled header: dark nav text ── */
+        #site-header.scrolled .nav-link-item,
+        #site-header.scrolled #desktop-nav .menu > li > a,
+        #site-header.scrolled #desktop-nav ul li a {
+            color: rgba(26,33,30,0.85) !important;
+        }
+        #site-header.scrolled .nav-link-item:hover,
+        #site-header.scrolled #desktop-nav .menu > li > a:hover {
+            color: <?php echo $forest; ?> !important;
+            background-color: rgba(27,77,62,0.06) !important;
+        }
+        #site-header.scrolled .nav-link-item.nav-link-active,
+        #site-header.scrolled .nav-link-item[aria-current="page"],
+        #site-header.scrolled #desktop-nav .menu > li.current-menu-item > a,
+        #site-header.scrolled #desktop-nav .menu > li.current_page_item > a {
+            color: <?php echo $forest; ?> !important;
+        }
+        /* Mobile hamburger: dark when scrolled */
+        #site-header.scrolled .header-mobile-toggle {
+            color: <?php echo $charcoal; ?> !important;
+        }
+    </style>
 </head>
 
 <body <?php body_class( 'font-sans bg-offwhite text-charcoal antialiased' ); ?>>
