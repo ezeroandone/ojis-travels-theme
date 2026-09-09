@@ -28,13 +28,13 @@ get_header(); ?>
         <div class="absolute inset-0 hero-pattern opacity-5" aria-hidden="true"></div>
 
         <!-- Hero Content -->
-        <div class="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-16 flex flex-col lg:flex-row items-center gap-16">
+        <div class="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-24 sm:pb-16 flex flex-col lg:flex-row items-center gap-16">
 
             <div class="flex-1 text-center lg:text-left max-w-3xl">
 
                 <!-- Eyebrow — African perspective line -->
                 <p class="text-eco/90 text-xs sm:text-sm font-semibold uppercase tracking-widest mb-5 hero-badge">
-                    <?php echo esc_html( get_theme_mod( 'ojis_hero_badge', __( 'African Perspective. Global Outlook.', 'ojis-travels-theme' ) ) ); ?>
+                    <?php echo esc_html( get_theme_mod( 'ojis_hero_badge', __( 'African Perspective. Global Outlook. Local Impact.', 'ojis-travels-theme' ) ) ); ?>
                 </p>
 
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight mb-6 hero-headline">
@@ -65,8 +65,8 @@ get_header(); ?>
                     </a>
                 </div>
 
-                <!-- Tagline strip -->
-                <p class="mt-10 text-white/50 text-xs uppercase tracking-widest hero-badge">
+                <!-- Tagline strip — hidden on mobile to avoid scroll-button overlap -->
+                <p class="hidden sm:block mt-10 text-white/50 text-xs uppercase tracking-widest hero-badge">
                     <?php esc_html_e( 'People &bull; Places &bull; A More Sustainable Tomorrow', 'ojis-travels-theme' ); ?>
                 </p>
             </div>
@@ -92,14 +92,14 @@ get_header(); ?>
 
         </div>
 
-        <!-- Scroll indicator -->
+        <!-- Scroll indicator — sits outside content flow, clear of tagline on all screens -->
         <button
             id="hero-scroll-btn"
-            class="hero-scroll-indicator absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer bg-transparent border-0 p-2 rounded-xl hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 transition-transform duration-200"
+            class="hero-scroll-indicator absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 cursor-pointer bg-transparent border-0 p-2 rounded-xl hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 transition-transform duration-200"
             aria-label="<?php esc_attr_e( 'Scroll to next section', 'ojis-travels-theme' ); ?>"
             type="button"
         >
-            <span class="text-white/60 text-xs uppercase tracking-widest font-medium"><?php esc_html_e( 'Scroll', 'ojis-travels-theme' ); ?></span>
+            <span class="hidden sm:block text-white/60 text-xs uppercase tracking-widest font-medium"><?php esc_html_e( 'Scroll', 'ojis-travels-theme' ); ?></span>
             <span class="material-symbols-outlined text-white/60 text-2xl" aria-hidden="true">keyboard_arrow_down</span>
         </button>
     </section>
@@ -180,14 +180,16 @@ get_header(); ?>
     </section>
 
     <!-- ═══════════════════════════════════════════════════════
-         SECTION 3 — BRAND PHILOSOPHY
+         SECTION 3 — BRAND PHILOSOPHY + IMPACT COUNTERS (unified)
     ════════════════════════════════════════════════════════ -->
-    <section class="py-24 bg-forest relative overflow-hidden" aria-labelledby="philosophy-heading">
+    <section class="bg-forest relative overflow-hidden" aria-labelledby="philosophy-heading">
         <div class="absolute inset-0 hero-pattern opacity-5" aria-hidden="true"></div>
-        <div class="relative max-w-5xl mx-auto px-6 text-center reveal-element">
+
+        <!-- Philosophy headline block -->
+        <div class="relative max-w-5xl mx-auto px-6 pt-20 pb-14 text-center reveal-element">
             <span class="section-eyebrow-light mb-6 block"><?php esc_html_e( 'Our Philosophy', 'ojis-travels-theme' ); ?></span>
             <h2 id="philosophy-heading" class="text-3xl sm:text-4xl font-bold text-white mb-6 leading-tight">
-                <?php esc_html_e( 'One Vision. Two Ways to Create Impact.', 'ojis-travels-theme' ); ?>
+                <?php esc_html_e( 'Progress Over Perfection', 'ojis-travels-theme' ); ?>
             </h2>
             <p class="text-white/80 text-lg leading-relaxed mb-6 max-w-3xl mx-auto">
                 <?php esc_html_e( 'Whether we are helping a hotel improve its operations or helping a traveller make more responsible choices, our goal remains the same:', 'ojis-travels-theme' ); ?>
@@ -202,39 +204,31 @@ get_header(); ?>
                 </span>
             </div>
         </div>
-    </section>
 
-    <!-- ═══════════════════════════════════════════════════════
-         SECTION 4 — IMPACT COUNTERS (visual break between philosophy & founder)
-    ════════════════════════════════════════════════════════ -->
-    <section class="py-20 bg-charcoal" aria-label="<?php esc_attr_e( 'Impact Statistics', 'ojis-travels-theme' ); ?>">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12 reveal-element">
-                <span class="text-eco text-xs font-semibold uppercase tracking-widest"><?php esc_html_e( 'Our Impact', 'ojis-travels-theme' ); ?></span>
-                <h2 class="text-3xl font-bold text-white mt-2">
-                    <?php echo esc_html( get_theme_mod( 'ojis_counters_heading', __( 'Progress Over Perfection', 'ojis-travels-theme' ) ) ); ?>
-                </h2>
-            </div>
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-                <?php
-                $counters = [
-                    [ 'end' => get_theme_mod( 'ojis_counter_1_value', '3' ),    'suffix' => get_theme_mod( 'ojis_counter_1_suffix', '+' ),  'label' => get_theme_mod( 'ojis_counter_1_label', __( 'Core Service Areas',       'ojis-travels-theme' ) ), 'icon' => 'category'  ],
-                    [ 'end' => get_theme_mod( 'ojis_counter_2_value', '100' ),  'suffix' => get_theme_mod( 'ojis_counter_2_suffix', '%' ),  'label' => get_theme_mod( 'ojis_counter_2_label', __( 'Africa-Focused Approach',  'ojis-travels-theme' ) ), 'icon' => 'public'    ],
-                    [ 'end' => get_theme_mod( 'ojis_counter_3_value', '1' ),    'suffix' => get_theme_mod( 'ojis_counter_3_suffix', '' ),   'label' => get_theme_mod( 'ojis_counter_3_label', __( 'GSTC Trained Founder',     'ojis-travels-theme' ) ), 'icon' => 'school'    ],
-                    [ 'end' => get_theme_mod( 'ojis_counter_4_value', '2026' ), 'suffix' => get_theme_mod( 'ojis_counter_4_suffix', '' ),   'label' => get_theme_mod( 'ojis_counter_4_label', __( 'Year of Full Operations',  'ojis-travels-theme' ) ), 'icon' => 'event'     ],
-                ];
-                foreach ( $counters as $k => $counter ) : ?>
-                <div class="reveal-element" style="transition-delay: <?php echo esc_attr( $k * 100 ); ?>ms">
-                    <span class="material-symbols-outlined text-eco text-3xl mb-3 block" aria-hidden="true"><?php echo esc_html( $counter['icon'] ); ?></span>
-                    <div
-                        class="impact-counter text-5xl font-bold text-white mb-2"
-                        data-end="<?php echo esc_attr( $counter['end'] ); ?>"
-                        data-suffix="<?php echo esc_attr( $counter['suffix'] ); ?>"
-                        aria-label="<?php echo esc_attr( $counter['end'] . $counter['suffix'] . ' ' . $counter['label'] ); ?>"
-                    >0</div>
-                    <p class="text-white/70 text-sm"><?php echo esc_html( $counter['label'] ); ?></p>
+        <!-- Impact counters — directly inside the philosophy section, no separate section -->
+        <div class="relative border-t border-white/10 bg-charcoal/30 py-16">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <?php
+                    $counters = [
+                        [ 'end' => get_theme_mod( 'ojis_counter_1_value', '3' ),    'suffix' => get_theme_mod( 'ojis_counter_1_suffix', '+' ),  'label' => get_theme_mod( 'ojis_counter_1_label', __( 'Core Service Areas',       'ojis-travels-theme' ) ), 'icon' => 'category'  ],
+                        [ 'end' => get_theme_mod( 'ojis_counter_2_value', '100' ),  'suffix' => get_theme_mod( 'ojis_counter_2_suffix', '%' ),  'label' => get_theme_mod( 'ojis_counter_2_label', __( 'Africa-Focused Approach',  'ojis-travels-theme' ) ), 'icon' => 'public'    ],
+                        [ 'end' => get_theme_mod( 'ojis_counter_3_value', '1' ),    'suffix' => get_theme_mod( 'ojis_counter_3_suffix', '' ),   'label' => get_theme_mod( 'ojis_counter_3_label', __( 'GSTC Trained Founder',     'ojis-travels-theme' ) ), 'icon' => 'school'    ],
+                        [ 'end' => get_theme_mod( 'ojis_counter_4_value', '2026' ), 'suffix' => get_theme_mod( 'ojis_counter_4_suffix', '' ),   'label' => get_theme_mod( 'ojis_counter_4_label', __( 'Year of Full Operations',  'ojis-travels-theme' ) ), 'icon' => 'event'     ],
+                    ];
+                    foreach ( $counters as $k => $counter ) : ?>
+                    <div class="reveal-element" style="transition-delay: <?php echo esc_attr( $k * 100 ); ?>ms">
+                        <span class="material-symbols-outlined text-eco text-3xl mb-3 block" aria-hidden="true"><?php echo esc_html( $counter['icon'] ); ?></span>
+                        <div
+                            class="impact-counter text-5xl font-bold text-white mb-2"
+                            data-end="<?php echo esc_attr( $counter['end'] ); ?>"
+                            data-suffix="<?php echo esc_attr( $counter['suffix'] ); ?>"
+                            aria-label="<?php echo esc_attr( $counter['end'] . $counter['suffix'] . ' ' . $counter['label'] ); ?>"
+                        >0</div>
+                        <p class="text-white/70 text-sm"><?php echo esc_html( $counter['label'] ); ?></p>
+                    </div>
+                    <?php endforeach; ?>
                 </div>
-                <?php endforeach; ?>
             </div>
         </div>
     </section>

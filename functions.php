@@ -19,6 +19,8 @@ define( 'OJIS_AUTHOR_URI', 'https://ezeroandone.io' );
 // ─── Load helpers ─────────────────────────────────────────────────────────────
 require_once OJIS_THEME_DIR . '/inc/social-icons.php';
 require_once OJIS_THEME_DIR . '/inc/github-updater.php';
+require_once OJIS_THEME_DIR . '/inc/seo.php';
+require_once OJIS_THEME_DIR . '/inc/analytics.php';
 
 // ─── Ensure logo Customizer defaults are correctly seeded in the database ─────
 // get_theme_mod() returns stale DB values even when the default arg changes.
