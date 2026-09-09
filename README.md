@@ -13,80 +13,81 @@ Custom WordPress theme for **OJIS Travels & Advisory** — a sustainable tourism
 ```
 You edit theme files  →  bump Version in style.css
        ↓
-git tag v1.x.x  →  git push origin v1.x.x
+git commit + git tag v1.x.x + git push origin main --tags
        ↓
-GitHub Actions builds the ZIP and creates a Release
+GitHub Actions automatically builds ojis-travels-theme.zip and publishes a Release
        ↓
-WordPress fetches the new version number from GitHub (every 12 hours)
+WordPress checks GitHub every 12 hours
        ↓
-"Update Available" appears in Appearance → Themes
+"Update Available" appears in Appearance → Themes on EVERY site running the theme
        ↓
-Click Update — WordPress downloads and installs the ZIP
+Click Update — WordPress downloads and installs the new version automatically
 ```
+
+**No wp-config.php required.** The updater is built into the theme and works on any WordPress site with zero configuration. Just install the theme ZIP and updates are detected automatically.
 
 ---
 
-## Setup (one-time)
+## Installing on a New WordPress Site
 
-### 1. Repository
+1. Download the latest `ojis-travels-theme.zip` from the [Releases page](https://github.com/ezeroandone/ojis-travels-theme/releases)
+2. In WordPress: **Appearance → Themes → Add New → Upload Theme**
+3. Upload the ZIP → Activate
+4. Done — future updates appear automatically in **Appearance → Themes**
 
-The repo is already live at: **https://github.com/ezeroandone/ojis-travels-theme**
-
-```bash
-# To clone on a new machine:
-git clone https://github.com/ezeroandone/ojis-travels-theme.git
-```
-
-### 2. Tell WordPress where to find updates
-
-Add these lines to your site's **wp-config.php** (above `/* That's all, stop editing! */`):
-
-```php
-define( 'OJIS_GH_USER',       'YOUR_GITHUB_USERNAME' );   // ← replace this
-define( 'OJIS_GH_REPO',       'ojis-travels-theme' );
-define( 'OJIS_GH_BRANCH',     'main' );
-define( 'OJIS_GH_TOKEN',      '' );      // leave blank for public repos
-define( 'OJIS_GH_USE_BRANCH', true );    // true = use branch ZIP (no release needed)
-```
-
-> **Private repo?** Generate a GitHub Personal Access Token (PAT) with `repo` scope and set `OJIS_GH_TOKEN` to it.
-
-### 3. That's it
-
-The theme's built-in `inc/github-updater.php` reads these constants and handles everything else automatically.
+No wp-config.php edits, no plugin installs, no API keys.
 
 ---
 
-## Releasing an Update
-
-Every time you want WordPress to prompt users to update:
+## Releasing an Update (push to all sites at once)
 
 ```bash
-# 1. Make your changes, then bump the version in style.css
-#    Change:  Version: 1.0.0
-#    To:      Version: 1.0.1   (or 1.1.0 for minor, 2.0.0 for major)
+# 1. Edit theme files locally
 
-# 2. Stage and commit
+# 2. Bump the version in style.css
+#    Example:  Version: 1.0.0  →  Version: 1.0.1
+
+# 3. Commit, tag, and push
 git add -A
 git commit -m "v1.0.1: describe what changed"
-
-# 3. Tag the release — this triggers the GitHub Actions workflow
 git tag v1.0.1
 git push origin main --tags
 ```
 
-GitHub Actions then:
-1. Reads the version from `style.css`
-2. Builds `ojis-travels-theme.zip`
-3. Creates a GitHub Release with the ZIP attached
-
-WordPress checks for updates every 12 hours. To force an immediate check: go to **Dashboard → Updates** and click **Check Again**.
+That's it. GitHub Actions builds the ZIP and creates the release. WordPress sites running the theme detect the new version within 12 hours (or immediately via **Dashboard → Updates → Check Again**).
 
 ---
 
-## Local Development
+## Finding wp-config.php on Hostinger
 
-Edit files directly in `c:\Users\hp\OneDrive\Documents\Ojis\ojis-travels-theme\` and copy/sync to your WordPress `wp-content/themes/` folder, or symlink it.
+If you ever need to edit `wp-config.php` on Hostinger:
+
+1. Log in to **hPanel** (your Hostinger control panel)
+2. Go to **Files → File Manager**
+3. Navigate to `public_html/` (your WordPress root)
+4. `wp-config.php` is there — Hostinger sometimes hides it by default. Click the **Settings / Show Hidden Files** toggle in the File Manager toolbar to reveal it.
+
+Alternatively, connect via FTP:
+- Host: `ftp.yourdomain.com`
+- Credentials: found in hPanel → **Hosting → FTP Accounts**
+
+---
+
+## Local Development Workflow
+
+```bash
+# Clone the repo
+git clone https://github.com/ezeroandone/ojis-travels-theme.git
+
+# Edit files in your local WordPress themes folder or symlink:
+# wp-content/themes/ojis-travels-theme → this repo folder
+
+# Push changes
+git add -A
+git commit -m "description"
+git push origin main
+# (bump version + tag only when you want to trigger an update on live sites)
+```
 
 ---
 
@@ -94,29 +95,32 @@ Edit files directly in `c:\Users\hp\OneDrive\Documents\Ojis\ojis-travels-theme\`
 
 ```
 ojis-travels-theme/
-├── style.css              ← Theme header (version lives here)
+├── style.css              ← Theme header — Version: lives here
 ├── functions.php          ← Setup, enqueue, Customizer, AJAX, newsletter
-├── header.php             ← Sticky glassmorphism header + dual logo
+├── header.php             ← Sticky glassmorphism header + dual logo swap
 ├── footer.php             ← 4-column dark footer
 ├── front-page.php         ← Homepage template
+├── single.php             ← Single post template
 ├── page.php               ← Generic page template
-├── page-about.php         ← About Us template
-├── page-services.php      ← Services template
-├── page-insights.php      ← Insights / Blog template
-├── page-contact.php       ← Contact / Advisory Inquiry template
+├── page-about.php         ← About Us
+├── page-services.php      ← Services
+├── page-insights.php      ← Insights / Blog
+├── page-contact.php       ← Contact / Advisory
 ├── index.php              ← Archive / search fallback
 ├── inc/
-│   ├── github-updater.php ← Handles WordPress update checks from GitHub
+│   ├── github-updater.php ← Zero-config WordPress update checker (GitHub)
+│   ├── seo.php            ← Meta tags, OG, Twitter card, Schema.org, Sitemap
+│   ├── analytics.php      ← Built-in visitor analytics dashboard
 │   └── social-icons.php   ← Inline SVG social media icons
 ├── assets/
 │   ├── css/main.css       ← Design tokens, components, animations
-│   ├── js/main.js         ← Scroll behaviour, logo swap, counters, forms
-│   └── images/            ← Theme images and logos
+│   ├── js/main.js         ← Scroll, logo swap, counters, forms
+│   └── images/
 └── .github/
     └── workflows/
-        └── release.yml    ← Auto-builds release ZIP on version tag push
+        └── release.yml    ← Auto-builds ZIP on version tag push
 ```
 
 ---
 
-*Built with progress over perfection.*
+*Built with progress over perfection — eZeroAndOne.io*

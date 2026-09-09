@@ -5,27 +5,31 @@
  * Checks the GitHub repository for a newer version of this theme and surfaces
  * the standard WordPress "Update Available" notice in the dashboard.
  *
+ * ZERO CONFIGURATION REQUIRED.
+ * Install the theme on any WordPress site and updates will be detected
+ * automatically from github.com/ezeroandone/ojis-travels-theme.
+ *
  * How it works:
  *  1. WordPress calls pre_set_site_transient_update_themes on a schedule.
- *  2. This class fetches the raw style.css from the GitHub repo's default branch.
+ *  2. This class fetches the raw style.css from the GitHub repo's main branch.
  *  3. It reads the "Version:" header from that file.
  *  4. If the remote version is higher than the installed version, WordPress shows
- *     the update notice. Clicking "Update" downloads the release ZIP from GitHub.
+ *     the update notice in Appearance → Themes. Clicking "Update" downloads
+ *     and installs the new version automatically.
  *
- * Requirements:
- *  - The GitHub repo must be PUBLIC, OR you must supply a Personal Access Token.
- *  - Every release must bump the "Version:" header in style.css.
- *  - The repo must have either:
- *      a) A tagged release whose ZIP is the theme folder, OR
- *      b) A branch whose root is the theme folder (set OJIS_GH_USE_BRANCH to true).
+ * To trigger an update on any site:
+ *  1. Edit files locally.
+ *  2. Bump "Version:" in style.css (e.g. 1.0.0 → 1.0.1).
+ *  3. git commit + git tag v1.0.1 + git push origin main --tags
+ *  4. WordPress detects the new version within 12 hours (or immediately via
+ *     Dashboard → Updates → Check Again).
  *
- * Configuration — set these in wp-config.php to override the defaults:
- *
- *   define( 'OJIS_GH_USER',       'your-github-username' );
- *   define( 'OJIS_GH_REPO',       'ojis-travels-theme' );
- *   define( 'OJIS_GH_BRANCH',     'main' );         // branch that holds the theme
- *   define( 'OJIS_GH_TOKEN',      '' );              // Personal Access Token (private repos)
- *   define( 'OJIS_GH_USE_BRANCH', false );           // true = download branch ZIP; false = use latest release
+ * Optional overrides via wp-config.php (only needed for private repos or forks):
+ *   define( 'OJIS_GH_USER',       'different-username' );
+ *   define( 'OJIS_GH_REPO',       'different-repo-name' );
+ *   define( 'OJIS_GH_BRANCH',     'main' );
+ *   define( 'OJIS_GH_TOKEN',      'ghp_xxx' );  // only for PRIVATE repos
+ *   define( 'OJIS_GH_USE_BRANCH', true );
  *
  * @package ojis-travels-theme
  */
