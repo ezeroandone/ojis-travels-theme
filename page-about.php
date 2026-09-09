@@ -200,7 +200,7 @@ get_header(); ?>
                         <p class="text-charcoal font-bold text-lg leading-snug">Omoaghe Jeffrey Edene</p>
                         <p class="text-forest text-sm font-semibold mt-1"><?php esc_html_e( 'Founder, OJIS Travels & Advisory', 'ojis-travels-theme' ); ?></p>
                         <p class="text-muted text-xs mt-2 leading-relaxed max-w-xs">
-                            <?php esc_html_e( 'MA International Tourism & Hospitality Management', 'ojis-travels-theme' ); ?><br>
+                            <?php esc_html_e( 'International Tourism & Hospitality Management', 'ojis-travels-theme' ); ?><br>
                             <?php esc_html_e( 'MSc Business Management (Hospitality Specialisation)', 'ojis-travels-theme' ); ?><br>
                             <?php esc_html_e( 'GSTC Trained Professional', 'ojis-travels-theme' ); ?>
                         </p>
@@ -242,7 +242,7 @@ get_header(); ?>
                                 <span class="font-normal text-muted ml-1">— <?php esc_html_e( 'Founder', 'ojis-travels-theme' ); ?></span>
                             </cite>
                             <span class="text-muted text-xs ml-auto hidden sm:block">
-                                <?php esc_html_e( 'MA International Tourism & Hospitality Management | MSc Business Management (Hospitality) | GSTC Trained', 'ojis-travels-theme' ); ?>
+                                <?php esc_html_e( 'International Tourism & Hospitality Management | MSc Business Management (Hospitality) | GSTC Trained', 'ojis-travels-theme' ); ?>
                             </span>
                         </div>
 
