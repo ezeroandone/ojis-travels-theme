@@ -1144,7 +1144,7 @@ function ojis_customizer_settings( $wp_customize ) {
     // ── Section: Site Identity extras (footer tagline, contact, social) ─
     $wp_customize->add_section( 'ojis_site_identity', [
         'title'       => __( 'Social Media & Contact', 'ojis-travels-theme' ),
-        'description' => __( 'Set your social media profile URLs and contact details. These appear in the footer and wherever social links are shown across the site.', 'ojis-travels-theme' ),
+        'description' => __( 'Update your social media profile URLs here. Changes appear immediately in the footer icons. Leave a field blank to hide that icon.', 'ojis-travels-theme' ),
         'panel'       => 'ojis_brand_panel',
         'priority'    => 15,
     ] );
@@ -1165,7 +1165,7 @@ function ojis_customizer_settings( $wp_customize ) {
         [ 'ojis_social_linkedin',  'https://www.linkedin.com/company/ojis-travels-advisory',        __( 'LinkedIn URL',        'ojis-travels-theme' ) ],
         [ 'ojis_social_facebook',  'https://web.facebook.com/profile.php?id=61591486179942',         __( 'Facebook URL',        'ojis-travels-theme' ) ],
         [ 'ojis_social_tiktok',    'https://www.tiktok.com/@ojistravels1',                           __( 'TikTok URL',          'ojis-travels-theme' ) ],
-        [ 'ojis_social_twitter',   '',                                                               __( 'X (Twitter) URL',    'ojis-travels-theme' ) ],
+        [ 'ojis_social_twitter',   'https://x.com/ojistravels?s=11',                                            __( 'X (Twitter) URL',    'ojis-travels-theme' ) ],
         [ 'ojis_social_youtube',   '',                                                               __( 'YouTube URL',        'ojis-travels-theme' ) ],
         [ 'ojis_social_website',   'https://ojistravels.com',                                        __( 'Website / External', 'ojis-travels-theme' ) ],
     ];
@@ -1471,7 +1471,18 @@ function ojis_register_social_widget() {
 }
 add_action( 'widgets_init', 'ojis_register_social_widget' );
 
-// ─── Custom Page Templates Registration ───────────────────────────────────────
+// ─── Admin: shortcut link to Customizer social section ───────────────────────
+// Adds "Social Links" under Appearance in the WP admin sidebar for one-click access.
+function ojis_social_admin_link(): void {
+    add_theme_page(
+        __( 'Social Media Links', 'ojis-travels-theme' ),
+        __( 'Social Links', 'ojis-travels-theme' ),
+        'manage_options',
+        esc_url( admin_url( 'customize.php?autofocus[section]=ojis_site_identity' ) ),
+        '' // empty callback — this is a redirect link, not a page
+    );
+}
+add_action( 'admin_menu', 'ojis_social_admin_link' );
 function ojis_page_templates( $templates ) {
     $templates['page-about.php']    = __( 'About Us',           'ojis-travels-theme' );
     $templates['page-services.php'] = __( 'Services',           'ojis-travels-theme' );

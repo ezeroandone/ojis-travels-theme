@@ -53,6 +53,11 @@
                             'url'   => get_theme_mod( 'ojis_social_tiktok', 'https://www.tiktok.com/@ojistravels1' ),
                             'label' => __( 'OJIS Travels on TikTok', 'ojis-travels-theme' ),
                         ],
+                        [
+                            'key'   => 'twitter',
+                            'url'   => get_theme_mod( 'ojis_social_twitter', 'https://x.com/ojistravels?s=11' ),
+                            'label' => __( 'OJIS Travels on X (Twitter)', 'ojis-travels-theme' ),
+                        ],
                     ];
 
                     if ( ! function_exists( 'ojis_social_svg' ) ) {
