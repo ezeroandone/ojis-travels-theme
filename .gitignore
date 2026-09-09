@@ -24,3 +24,7 @@ dist/
 .env
 .env.*
 wp-config.php
+
+# Theme build ZIPs (built by GitHub Actions)
+*.zip
+
