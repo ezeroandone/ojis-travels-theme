@@ -158,7 +158,7 @@
     <!-- ── Mobile Menu ────────────────────────────────── -->
     <div
         id="mobile-menu"
-        class="mobile-menu lg:hidden hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-xl"
+        class="mobile-menu lg:hidden hidden left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-xl"
         role="dialog"
         aria-modal="true"
         aria-label="<?php esc_attr_e( 'Mobile navigation', 'ojis-travels-theme' ); ?>"

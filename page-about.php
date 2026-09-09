@@ -132,7 +132,7 @@ get_header(); ?>
                     </div>
                     <h3 class="text-2xl font-bold text-charcoal mb-4"><?php esc_html_e( 'Our Vision', 'ojis-travels-theme' ); ?></h3>
                     <p class="text-muted leading-relaxed">
-                        <?php esc_html_e( 'We envision a future where responsible travel and sustainable hospitality are the standard, not the exception, across Africa and beyond. A future where travellers make informed choices, hospitality businesses thrive responsibly, communities benefit meaningfully from tourism, and destinations are protected and strengthened for generations to come.', 'ojis-travels-theme' ); ?>
+                        <?php esc_html_e( 'We envision a future where responsible tourism and sustainable hospitality are the standard, not the exception, across Africa and beyond. A future where travellers make informed choices, hospitality businesses thrive responsibly, communities benefit meaningfully from tourism, and destinations are protected and strengthened for generations to come.', 'ojis-travels-theme' ); ?>
                     </p>
                 </div>
 

@@ -395,17 +395,36 @@ a {
 
 /* Mobile menu reveal animation */
 .mobile-menu {
-    transform: translateY(-8px);
-    opacity: 0;
+    /* Fixed positioning — sits below the header bar, fills remaining screen height.
+       This avoids clipping by parent overflow and works on all mobile browsers. */
+    position:   fixed;
+    top:        4rem;          /* matches h-16 (mobile header height) */
+    left:       0;
+    right:      0;
+    bottom:     0;             /* stretches to bottom of viewport — no clipping */
+    z-index:    49;            /* just below header z-50 */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    /* Slide-in animation */
+    transform:      translateY(-8px);
+    opacity:        0;
     transition:
         transform var(--transition-base),
-        opacity var(--transition-base);
+        opacity   var(--transition-base);
     pointer-events: none;
 }
 
+/* On sm+ the header is taller (h-20 = 5rem) */
+@media (min-width: 640px) {
+    .mobile-menu {
+        top: 5rem;
+    }
+}
+
 .mobile-menu.is-open {
-    transform: translateY(0);
-    opacity: 1;
+    transform:      translateY(0);
+    opacity:        1;
     pointer-events: auto;
 }
 
@@ -1331,11 +1350,7 @@ a {
 }
 
 /* ── 29. Mobile menu panel — full scroll if content overflows ─── */
-#mobile-menu {
-    max-height: calc(100svh - 4rem);
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-}
+/* ── 29. Mobile menu panel — no overflow clamp needed (fixed + bottom:0) ── */
 
 /* ── 30. Prevent content shift from fixed header ─────────────── */
 /* Applied to <body> via JS once header height is known */
