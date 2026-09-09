@@ -3,7 +3,8 @@
 Custom WordPress theme for **OJIS Travels & Advisory** — a sustainable tourism and hospitality brand.
 
 **Developer:** [Opeyemi Oladejobi Akinkunmi](https://ezeroandone.io) — eZeroAndOne.io  
-**Client:** OJIS Travels & Advisory — [ojistravels.com](https://ojistravels.com)
+**Client:** OJIS Travels & Advisory — [ojistravels.com](https://ojistravels.com)  
+**Repository:** [github.com/ezeroandone/ojis-travels-theme](https://github.com/ezeroandone/ojis-travels-theme)
 
 ---
 
@@ -27,14 +28,13 @@ Click Update — WordPress downloads and installs the ZIP
 
 ## Setup (one-time)
 
-### 1. Create the GitHub repository
+### 1. Repository
+
+The repo is already live at: **https://github.com/ezeroandone/ojis-travels-theme**
 
 ```bash
-# Log in to GitHub CLI
-gh auth login
-
-# Create a public repo under your account
-gh repo create ojis-travels-theme --public --source . --remote origin --push
+# To clone on a new machine:
+git clone https://github.com/ezeroandone/ojis-travels-theme.git
 ```
 
 ### 2. Tell WordPress where to find updates

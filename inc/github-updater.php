@@ -59,7 +59,7 @@ class OJIS_GitHub_Updater {
     private string $transient_key;
 
     public function __construct() {
-        $this->user            = defined( 'OJIS_GH_USER' )       ? OJIS_GH_USER       : 'YOUR_GITHUB_USERNAME';
+        $this->user            = defined( 'OJIS_GH_USER' )       ? OJIS_GH_USER       : 'ezeroandone';
         $this->repo            = defined( 'OJIS_GH_REPO' )       ? OJIS_GH_REPO       : 'ojis-travels-theme';
         $this->branch          = defined( 'OJIS_GH_BRANCH' )     ? OJIS_GH_BRANCH     : 'main';
         $this->token           = defined( 'OJIS_GH_TOKEN' )      ? OJIS_GH_TOKEN      : '';
