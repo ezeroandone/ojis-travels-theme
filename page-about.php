@@ -221,7 +221,7 @@ get_header(); ?>
                         <div class="space-y-5 text-charcoal leading-relaxed text-base">
                             <p><?php esc_html_e( 'Travel has the power to connect people, strengthen communities, preserve culture, and create opportunities. But how we travel and how hospitality businesses operate also matters.', 'ojis-travels-theme' ); ?></p>
 
-                            <p><?php esc_html_e( 'I founded OJIS Travels & Advisory because I believe sustainability should be practical, relevant, and achievable. It should not be complicated or reserved for a select few.', 'ojis-travels-theme' ); ?></p>
+                            <p><?php esc_html_e( 'I founded OJIS Travels & Advisory because I believe sustainability should be practical, relevant, and achievable. It shouldn\'t be complicated or reserved for a select few.', 'ojis-travels-theme' ); ?></p>
 
                             <p><?php esc_html_e( 'As travel and hospitality continue to grow across Africa, we have an opportunity to shape that growth responsibly. At OJIS, we help turn good intentions into informed action by educating travellers, amplifying responsible practices, showcasing practical solutions, and supporting hospitality businesses through professional advisory services.', 'ojis-travels-theme' ); ?></p>
 

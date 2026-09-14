@@ -1296,7 +1296,7 @@ function ojis_customizer_settings( $wp_customize ) {
         'panel' => 'ojis_homepage_panel',
     ] );
 
-    $r( 'ojis_founder_quote', 'I founded OJIS Travels & Advisory because I believe sustainability should be practical, relevant, and achievable. It should not be complicated or reserved for a select few. Our philosophy is simple: progress over perfection.',
+    $r( 'ojis_founder_quote', 'I founded OJIS Travels & Advisory because I believe sustainability should be practical, relevant, and achievable. It shouldn\'t be complicated or reserved for a select few. Our philosophy is simple: progress over perfection.',
         'sanitize_textarea_field', 'ojis_founder_excerpt', __( 'Founder Quote', 'ojis-travels-theme' ), 'textarea' );
 
     $r( 'ojis_founder_name', 'Omoaghe Jeffrey Edene',

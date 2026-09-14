@@ -395,24 +395,35 @@ a {
 
 /* Mobile menu reveal animation */
 .mobile-menu {
-    /* Fixed positioning — sits below the header bar, fills remaining screen height.
-       This avoids clipping by parent overflow and works on all mobile browsers. */
+    /* Fixed positioning — sits below the header bar, fills remaining screen height. */
     position:   fixed;
     top:        4rem;          /* matches h-16 (mobile header height) */
     left:       0;
     right:      0;
-    bottom:     0;             /* stretches to bottom of viewport — no clipping */
-    z-index:    49;            /* just below header z-50 */
+    bottom:     0;
+    z-index:    49;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 
-    /* Slide-in animation */
-    transform:      translateY(-8px);
-    opacity:        0;
+    /* Force GPU compositing layer — prevents Samsung Chrome rendering bug
+       where backdrop-filter on fixed elements causes invisible menus */
+    transform:       translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change:     opacity, visibility;
+
+    /* Hide via visibility so the GPU layer stays allocated.
+       display:none destroys the layer and causes Samsung Chrome to
+       fail to re-composite it correctly on re-open. */
+    visibility:  hidden;
+    opacity:     0;
     transition:
-        transform var(--transition-base),
-        opacity   var(--transition-base);
+        opacity    0.25s ease,
+        visibility 0.25s ease;
     pointer-events: none;
+
+    /* Solid white background — no backdrop-filter on mobile menu.
+       backdrop-filter on fixed elements is the primary Samsung Chrome trigger. */
+    background-color: rgba(255, 255, 255, 0.98);
 }
 
 /* On sm+ the header is taller (h-20 = 5rem) */
@@ -423,7 +434,7 @@ a {
 }
 
 .mobile-menu.is-open {
-    transform:      translateY(0);
+    visibility:     visible;
     opacity:        1;
     pointer-events: auto;
 }

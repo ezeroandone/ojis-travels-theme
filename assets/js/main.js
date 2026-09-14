@@ -107,8 +107,8 @@ function initHeader() {
    2. MOBILE NAVIGATION TOGGLE
 ══════════════════════════════════════════════════════════════ */
 function initMobileNav() {
-    const toggle  = qs('#mobile-menu-toggle');
-    const menu    = qs('#mobile-menu');
+    const toggle    = qs('#mobile-menu-toggle');
+    const menu      = qs('#mobile-menu');
     const menuIcon  = qs('.menu-icon',  toggle);
     const closeIcon = qs('.close-icon', toggle);
 
@@ -118,18 +118,25 @@ function initMobileNav() {
 
     function openMenu() {
         isOpen = true;
+
+        // Remove hidden first so the element is in the layout,
+        // then add is-open on next frame so the CSS transition fires.
+        // On Samsung Chrome we must ensure the element is display-visible
+        // BEFORE opacity animates — hence the rAF chain.
         menu.classList.remove('hidden');
-        // Small rAF delay ensures the transition runs after display:block
+        menu.removeAttribute('aria-hidden');
+
         requestAnimationFrame(() => {
             requestAnimationFrame(() => {
                 menu.classList.add('is-open');
             });
         });
+
         toggle.setAttribute('aria-expanded', 'true');
         toggle.setAttribute('aria-label', 'Close navigation menu');
         menuIcon?.classList.add('hidden');
         closeIcon?.classList.remove('hidden');
-        document.body.style.overflow = 'hidden'; // prevent background scroll
+        document.body.style.overflow = 'hidden';
     }
 
     function closeMenu() {
@@ -141,13 +148,23 @@ function initMobileNav() {
         closeIcon?.classList.add('hidden');
         document.body.style.overflow = '';
 
-        // Wait for transition to finish before hiding
-        menu.addEventListener('transitionend', () => {
-            if (!isOpen) menu.classList.add('hidden');
-        }, { once: true });
+        // Hide after transition completes (250ms matches CSS).
+        // Use setTimeout as a reliable fallback — transitionend can fire
+        // incorrectly on some Android Chrome versions.
+        setTimeout(() => {
+            if (!isOpen) {
+                menu.classList.add('hidden');
+                menu.setAttribute('aria-hidden', 'true');
+            }
+        }, 260);
     }
 
-    toggle.addEventListener('click', () => {
+    // Ensure menu starts hidden
+    menu.classList.add('hidden');
+    menu.setAttribute('aria-hidden', 'true');
+
+    toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
         isOpen ? closeMenu() : openMenu();
     });
 
@@ -161,7 +178,7 @@ function initMobileNav() {
         if (e.key === 'Escape' && isOpen) closeMenu();
     });
 
-    // Close on outside click
+    // Close on outside click (but not if clicking the toggle itself)
     document.addEventListener('click', (e) => {
         if (isOpen && !menu.contains(e.target) && !toggle.contains(e.target)) {
             closeMenu();
