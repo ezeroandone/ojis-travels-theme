@@ -213,10 +213,10 @@
     <!-- ── Mobile Menu ────────────────────────────────── -->
     <div
         id="mobile-menu"
-        class="mobile-menu lg:hidden hidden left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-xl"
         role="dialog"
         aria-modal="true"
         aria-label="<?php esc_attr_e( 'Mobile navigation', 'ojis-travels-theme' ); ?>"
+        style="display:none;"
     >
         <nav class="max-w-7xl mx-auto px-6 py-6" aria-label="<?php esc_attr_e( 'Mobile Navigation', 'ojis-travels-theme' ); ?>">
             <ul class="flex flex-col gap-1" role="menu">

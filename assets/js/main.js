@@ -118,20 +118,9 @@ function initMobileNav() {
 
     function openMenu() {
         isOpen = true;
-
-        // Remove hidden first so the element is in the layout,
-        // then add is-open on next frame so the CSS transition fires.
-        // On Samsung Chrome we must ensure the element is display-visible
-        // BEFORE opacity animates — hence the rAF chain.
-        menu.classList.remove('hidden');
-        menu.removeAttribute('aria-hidden');
-
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                menu.classList.add('is-open');
-            });
-        });
-
+        // Direct style — no class toggling, no CSS transitions, no RAF.
+        // The only approach that works reliably on all Android Chrome versions.
+        menu.style.display = 'block';
         toggle.setAttribute('aria-expanded', 'true');
         toggle.setAttribute('aria-label', 'Close navigation menu');
         menuIcon?.classList.add('hidden');
@@ -141,51 +130,33 @@ function initMobileNav() {
 
     function closeMenu() {
         isOpen = false;
-        menu.classList.remove('is-open');
+        menu.style.display = 'none';
         toggle.setAttribute('aria-expanded', 'false');
         toggle.setAttribute('aria-label', 'Open navigation menu');
         menuIcon?.classList.remove('hidden');
         closeIcon?.classList.add('hidden');
         document.body.style.overflow = '';
-
-        // Hide after transition completes (250ms matches CSS).
-        // Use setTimeout as a reliable fallback — transitionend can fire
-        // incorrectly on some Android Chrome versions.
-        setTimeout(() => {
-            if (!isOpen) {
-                menu.classList.add('hidden');
-                menu.setAttribute('aria-hidden', 'true');
-            }
-        }, 260);
     }
-
-    // Ensure menu starts hidden
-    menu.classList.add('hidden');
-    menu.setAttribute('aria-hidden', 'true');
 
     toggle.addEventListener('click', (e) => {
         e.stopPropagation();
         isOpen ? closeMenu() : openMenu();
     });
 
-    // Close on nav link click
     qsa('a', menu).forEach(link => {
         link.addEventListener('click', closeMenu);
     });
 
-    // Close on Escape key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && isOpen) closeMenu();
     });
 
-    // Close on outside click (but not if clicking the toggle itself)
     document.addEventListener('click', (e) => {
         if (isOpen && !menu.contains(e.target) && !toggle.contains(e.target)) {
             closeMenu();
         }
     });
 
-    // Close on resize to desktop breakpoint
     window.addEventListener('resize', debounce(() => {
         if (window.innerWidth >= 1024 && isOpen) closeMenu();
     }, 200));
