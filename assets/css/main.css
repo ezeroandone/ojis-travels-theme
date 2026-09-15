@@ -393,30 +393,16 @@ a {
     background-color: var(--color-forest);
 }
 
-/* Mobile menu — display-only toggle, no transitions.
-   Transitions with opacity/visibility/backdrop-filter on position:fixed
-   cause invisible menus on Samsung/Android Chrome due to GPU compositing bugs.
-   JS sets display:block / display:none directly. */
+/* Mobile menu — at body level, z-index:9999 set inline.
+   All positioning and visibility handled by inline styles in header.php
+   and direct menu.style.display in main.js.
+   No CSS transitions, no backdrop-filter, no GPU compositing issues. */
 .mobile-menu {
-    position:         fixed;
-    top:              4rem;       /* h-16 mobile header */
-    left:             0;
-    right:            0;
-    bottom:           0;
-    z-index:          49;
-    overflow-y:       auto;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior: contain;
-    background-color: #ffffff;
-    border-top:       1px solid #f0f0f0;
-    box-shadow:       0 8px 32px rgba(0,0,0,0.12);
-    /* No transitions, no opacity, no backdrop-filter */
+    /* Styles applied via inline style on the element for maximum reliability */
 }
 
 @media (min-width: 640px) {
-    .mobile-menu {
-        top: 5rem;   /* h-20 larger screens */
-    }
+    .mobile-menu { /* no overrides needed */ }
 }
 
 /* ── 6. Hero Section ───────────────────────────────────────── */

@@ -210,49 +210,55 @@
         </div>
     </nav>
 
-    <!-- ── Mobile Menu ────────────────────────────────── -->
-    <div
-        id="mobile-menu"
-        role="dialog"
-        aria-modal="true"
-        aria-label="<?php esc_attr_e( 'Mobile navigation', 'ojis-travels-theme' ); ?>"
-        style="display:none;"
-    >
-        <nav class="max-w-7xl mx-auto px-6 py-6" aria-label="<?php esc_attr_e( 'Mobile Navigation', 'ojis-travels-theme' ); ?>">
-            <ul class="flex flex-col gap-1" role="menu">
-                <?php
-                $mobile_items = [
-                    [ 'label' => __( 'Home',     'ojis-travels-theme' ), 'url' => home_url( '/' ),         'icon' => 'home' ],
-                    [ 'label' => __( 'About Us', 'ojis-travels-theme' ), 'url' => home_url( '/about' ),    'icon' => 'info' ],
-                    [ 'label' => __( 'Services', 'ojis-travels-theme' ), 'url' => home_url( '/services' ), 'icon' => 'eco' ],
-                    [ 'label' => __( 'Insights', 'ojis-travels-theme' ), 'url' => home_url( '/insights' ), 'icon' => 'article' ],
-                    [ 'label' => __( 'Contact',  'ojis-travels-theme' ), 'url' => home_url( '/contact' ),  'icon' => 'mail' ],
-                ];
-                foreach ( $mobile_items as $item ) :
-                ?>
-                <li role="none">
-                    <a
-                        href="<?php echo esc_url( $item['url'] ); ?>"
-                        class="flex items-center gap-3 px-4 py-3 text-base font-medium text-charcoal hover:text-forest hover:bg-forest/5 rounded-xl transition-colors duration-200"
-                        role="menuitem"
-                    >
-                        <span class="material-symbols-outlined text-xl text-forest" aria-hidden="true"><?php echo esc_html( $item['icon'] ); ?></span>
-                        <?php echo esc_html( $item['label'] ); ?>
-                    </a>
-                </li>
-                <?php endforeach; ?>
-            </ul>
-
-            <div class="mt-6 pt-6 border-t border-gray-100">
-                <a
-                    href="<?php echo esc_url( home_url( '/contact' ) ); ?>"
-                    class="btn-primary w-full justify-center inline-flex items-center gap-2"
-                >
-                    <span class="material-symbols-outlined text-base" aria-hidden="true">calendar_month</span>
-                    <?php esc_html_e( 'Book a Consultation', 'ojis-travels-theme' ); ?>
-                </a>
-            </div>
-        </nav>
-    </div>
 </header>
 <!-- /site-header -->
+
+<!-- ── Mobile Menu — placed at body level, outside <header>, to avoid
+     stacking context clipping from header's backdrop-filter and z-index ── -->
+<div
+    id="mobile-menu"
+    role="dialog"
+    aria-modal="true"
+    aria-label="<?php esc_attr_e( 'Mobile navigation', 'ojis-travels-theme' ); ?>"
+    style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; z-index:9999; background:#fff; overflow-y:auto; -webkit-overflow-scrolling:touch;"
+>
+    <!-- Push content below the header bar -->
+    <div style="height:4rem;" class="sm:hidden" aria-hidden="true"></div>
+    <div style="height:5rem;" class="hidden sm:block" aria-hidden="true"></div>
+
+    <nav class="max-w-7xl mx-auto px-6 py-6" aria-label="<?php esc_attr_e( 'Mobile Navigation', 'ojis-travels-theme' ); ?>">
+        <ul class="flex flex-col gap-1" role="menu">
+            <?php
+            $mobile_items = [
+                [ 'label' => __( 'Home',     'ojis-travels-theme' ), 'url' => home_url( '/' ),         'icon' => 'home' ],
+                [ 'label' => __( 'About Us', 'ojis-travels-theme' ), 'url' => home_url( '/about' ),    'icon' => 'info' ],
+                [ 'label' => __( 'Services', 'ojis-travels-theme' ), 'url' => home_url( '/services' ), 'icon' => 'eco' ],
+                [ 'label' => __( 'Insights', 'ojis-travels-theme' ), 'url' => home_url( '/insights' ), 'icon' => 'article' ],
+                [ 'label' => __( 'Contact',  'ojis-travels-theme' ), 'url' => home_url( '/contact' ),  'icon' => 'mail' ],
+            ];
+            foreach ( $mobile_items as $item ) :
+            ?>
+            <li role="none">
+                <a
+                    href="<?php echo esc_url( $item['url'] ); ?>"
+                    class="flex items-center gap-3 px-4 py-4 text-base font-medium text-charcoal hover:text-forest hover:bg-forest/5 rounded-xl transition-colors duration-200"
+                    role="menuitem"
+                >
+                    <span class="material-symbols-outlined text-xl text-forest" aria-hidden="true"><?php echo esc_html( $item['icon'] ); ?></span>
+                    <?php echo esc_html( $item['label'] ); ?>
+                </a>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+
+        <div class="mt-6 pt-6 border-t border-gray-100">
+            <a
+                href="<?php echo esc_url( home_url( '/contact' ) ); ?>"
+                class="btn-primary w-full justify-center inline-flex items-center gap-2"
+            >
+                <span class="material-symbols-outlined text-base" aria-hidden="true">calendar_month</span>
+                <?php esc_html_e( 'Book a Consultation', 'ojis-travels-theme' ); ?>
+            </a>
+        </div>
+    </nav>
+</div>
