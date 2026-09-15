@@ -226,6 +226,16 @@
     <div style="height:4rem;" class="sm:hidden" aria-hidden="true"></div>
     <div style="height:5rem;" class="hidden sm:block" aria-hidden="true"></div>
 
+    <!-- Close button inside the menu — always visible on top of the overlay -->
+    <button
+        id="mobile-menu-close"
+        style="position:fixed; top:0.75rem; right:1rem; z-index:10000; background:transparent; border:none; cursor:pointer; padding:0.5rem; display:flex; align-items:center; justify-content:center;"
+        aria-label="<?php esc_attr_e( 'Close navigation menu', 'ojis-travels-theme' ); ?>"
+        type="button"
+    >
+        <span class="material-symbols-outlined" style="font-size:2rem; color:#1A211E;" aria-hidden="true">close</span>
+    </button>
+
     <nav class="max-w-7xl mx-auto px-6 py-6" aria-label="<?php esc_attr_e( 'Mobile Navigation', 'ojis-travels-theme' ); ?>">
         <ul class="flex flex-col gap-1" role="menu">
             <?php

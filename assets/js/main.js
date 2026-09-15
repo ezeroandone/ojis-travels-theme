@@ -109,6 +109,7 @@ function initHeader() {
 function initMobileNav() {
     const toggle    = qs('#mobile-menu-toggle');
     const menu      = qs('#mobile-menu');
+    const closeBtn  = qs('#mobile-menu-close');  // close button inside the menu
     const menuIcon  = qs('.menu-icon',  toggle);
     const closeIcon = qs('.close-icon', toggle);
 
@@ -118,9 +119,8 @@ function initMobileNav() {
 
     function openMenu() {
         isOpen = true;
-        // Direct style — no class toggling, no CSS transitions, no RAF.
-        // The only approach that works reliably on all Android Chrome versions.
         menu.style.display = 'block';
+        if (closeBtn) closeBtn.style.display = 'flex';
         toggle.setAttribute('aria-expanded', 'true');
         toggle.setAttribute('aria-label', 'Close navigation menu');
         menuIcon?.classList.add('hidden');
@@ -131,6 +131,7 @@ function initMobileNav() {
     function closeMenu() {
         isOpen = false;
         menu.style.display = 'none';
+        if (closeBtn) closeBtn.style.display = 'none';
         toggle.setAttribute('aria-expanded', 'false');
         toggle.setAttribute('aria-label', 'Open navigation menu');
         menuIcon?.classList.remove('hidden');
@@ -138,10 +139,19 @@ function initMobileNav() {
         document.body.style.overflow = '';
     }
 
+    // Wire the hamburger toggle
     toggle.addEventListener('click', (e) => {
         e.stopPropagation();
         isOpen ? closeMenu() : openMenu();
     });
+
+    // Wire the close button inside the menu
+    if (closeBtn) {
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeMenu();
+        });
+    }
 
     qsa('a', menu).forEach(link => {
         link.addEventListener('click', closeMenu);
