@@ -280,7 +280,7 @@ get_header(); ?>
                         <!-- Credentials badges -->
                         <div class="flex flex-wrap justify-center gap-2 mt-2">
                             <?php foreach ( [
-                                'Tourism & Hospitality',
+                                'Master\'s in Tourism & Hospitality',
                                 'MSc Business Management',
                                 'GSTC Trained',
                             ] as $cred ) : ?>
