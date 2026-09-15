@@ -109,7 +109,7 @@ function initHeader() {
 function initMobileNav() {
     const toggle    = qs('#mobile-menu-toggle');
     const menu      = qs('#mobile-menu');
-    const closeBtn  = qs('#mobile-menu-close');  // close button inside the menu
+    const closeBtn  = qs('#mobile-menu-close');
     const menuIcon  = qs('.menu-icon',  toggle);
     const closeIcon = qs('.close-icon', toggle);
 
@@ -119,7 +119,7 @@ function initMobileNav() {
 
     function openMenu() {
         isOpen = true;
-        menu.style.display = 'block';
+        menu.style.display    = 'block';
         if (closeBtn) closeBtn.style.display = 'flex';
         toggle.setAttribute('aria-expanded', 'true');
         toggle.setAttribute('aria-label', 'Close navigation menu');
@@ -130,7 +130,7 @@ function initMobileNav() {
 
     function closeMenu() {
         isOpen = false;
-        menu.style.display = 'none';
+        menu.style.display    = 'none';
         if (closeBtn) closeBtn.style.display = 'none';
         toggle.setAttribute('aria-expanded', 'false');
         toggle.setAttribute('aria-label', 'Open navigation menu');
@@ -139,34 +139,32 @@ function initMobileNav() {
         document.body.style.overflow = '';
     }
 
-    // Wire the hamburger toggle
+    // Hamburger opens the menu
     toggle.addEventListener('click', (e) => {
         e.stopPropagation();
         isOpen ? closeMenu() : openMenu();
     });
 
-    // Wire the close button inside the menu
+    // Close button — separate element outside the menu div, no interference
     if (closeBtn) {
-        closeBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
+        closeBtn.addEventListener('click', closeMenu);
+        closeBtn.addEventListener('touchend', (e) => {
+            e.preventDefault();
             closeMenu();
         });
     }
 
+    // Clicking a nav link closes the menu
     qsa('a', menu).forEach(link => {
         link.addEventListener('click', closeMenu);
     });
 
+    // Escape key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && isOpen) closeMenu();
     });
 
-    document.addEventListener('click', (e) => {
-        if (isOpen && !menu.contains(e.target) && !toggle.contains(e.target)) {
-            closeMenu();
-        }
-    });
-
+    // Resize to desktop
     window.addEventListener('resize', debounce(() => {
         if (window.innerWidth >= 1024 && isOpen) closeMenu();
     }, 200));
