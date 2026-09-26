@@ -1283,7 +1283,7 @@ function ojis_customizer_settings( $wp_customize ) {
         [ 1, '3',    '+',  'Core Service Areas'       ],
         [ 2, '100',  '%',  'Africa-Focused Approach'  ],
         [ 3, '1',    '',   'GSTC Trained Founder'     ],
-        [ 4, '2026', '',   'Year of Full Operations'  ],
+        [ 4, '2025', '',   'Year of Full Operations'  ],
     ] as [$n, $val, $suf, $lbl] ) {
         $r( "ojis_counter_{$n}_value",  $val, 'sanitize_text_field', 'ojis_counters_section', sprintf( __( 'Counter %d Value', 'ojis-travels-theme' ), $n ) );
         $r( "ojis_counter_{$n}_suffix", $suf, 'sanitize_text_field', 'ojis_counters_section', sprintf( __( 'Counter %d Suffix', 'ojis-travels-theme' ), $n ) );

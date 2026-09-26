@@ -215,7 +215,8 @@ function initCounters() {
         qsa('.impact-counter').forEach(el => {
             const end    = parseFloat(el.dataset.end ?? '0');
             const suffix = el.dataset.suffix ?? '';
-            el.textContent = end + suffix;
+            const raw    = el.dataset.raw === 'true';
+            el.textContent = (raw ? String(end) : end.toLocaleString()) + suffix;
         });
         return;
     }
@@ -228,6 +229,7 @@ function initCounters() {
     function animateCounter(el) {
         const end    = parseFloat(el.dataset.end ?? '0');
         const suffix = el.dataset.suffix ?? '';
+        const raw    = el.dataset.raw === 'true'; // skip toLocaleString for year-style values
         const start  = 0;
         let startTime = null;
 
@@ -236,18 +238,22 @@ function initCounters() {
             return 1 - Math.pow(1 - t, 3);
         }
 
+        function format(n) {
+            return raw ? String(n) : n.toLocaleString();
+        }
+
         function step(timestamp) {
             if (!startTime) startTime = timestamp;
             const elapsed  = timestamp - startTime;
             const progress = Math.min(elapsed / DURATION, 1);
             const current  = Math.round(easeOutCubic(progress) * (end - start) + start);
 
-            el.textContent = current.toLocaleString() + suffix;
+            el.textContent = format(current) + suffix;
 
             if (progress < 1) {
                 requestAnimationFrame(step);
             } else {
-                el.textContent = end.toLocaleString() + suffix;
+                el.textContent = format(end) + suffix;
             }
         }
 

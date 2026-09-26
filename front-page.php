@@ -214,7 +214,7 @@ get_header(); ?>
                         [ 'end' => get_theme_mod( 'ojis_counter_1_value', '3' ),    'suffix' => get_theme_mod( 'ojis_counter_1_suffix', '+' ),  'label' => get_theme_mod( 'ojis_counter_1_label', __( 'Core Service Areas',       'ojis-travels-theme' ) ), 'icon' => 'category'  ],
                         [ 'end' => get_theme_mod( 'ojis_counter_2_value', '100' ),  'suffix' => get_theme_mod( 'ojis_counter_2_suffix', '%' ),  'label' => get_theme_mod( 'ojis_counter_2_label', __( 'Africa-Focused Approach',  'ojis-travels-theme' ) ), 'icon' => 'public'    ],
                         [ 'end' => get_theme_mod( 'ojis_counter_3_value', '1' ),    'suffix' => get_theme_mod( 'ojis_counter_3_suffix', '' ),   'label' => get_theme_mod( 'ojis_counter_3_label', __( 'GSTC Trained Founder',     'ojis-travels-theme' ) ), 'icon' => 'school'    ],
-                        [ 'end' => get_theme_mod( 'ojis_counter_4_value', '2026' ), 'suffix' => get_theme_mod( 'ojis_counter_4_suffix', '' ),   'label' => get_theme_mod( 'ojis_counter_4_label', __( 'Year of Full Operations',  'ojis-travels-theme' ) ), 'icon' => 'event'     ],
+                        [ 'end' => get_theme_mod( 'ojis_counter_4_value', '2025' ), 'suffix' => get_theme_mod( 'ojis_counter_4_suffix', '' ),   'label' => get_theme_mod( 'ojis_counter_4_label', __( 'Year of Full Operations',  'ojis-travels-theme' ) ), 'icon' => 'event',    'raw' => true ],
                     ];
                     foreach ( $counters as $k => $counter ) : ?>
                     <div class="reveal-element" style="transition-delay: <?php echo esc_attr( $k * 100 ); ?>ms">
@@ -223,6 +223,7 @@ get_header(); ?>
                             class="impact-counter text-5xl font-bold text-white mb-2"
                             data-end="<?php echo esc_attr( $counter['end'] ); ?>"
                             data-suffix="<?php echo esc_attr( $counter['suffix'] ); ?>"
+                            <?php if ( ! empty( $counter['raw'] ) ) : ?>data-raw="true"<?php endif; ?>
                             aria-label="<?php echo esc_attr( $counter['end'] . $counter['suffix'] . ' ' . $counter['label'] ); ?>"
                         >0</div>
                         <p class="text-white/70 text-sm"><?php echo esc_html( $counter['label'] ); ?></p>
