@@ -225,7 +225,7 @@ get_header(); ?>
 
                             <p><?php esc_html_e( 'As travel and hospitality continue to grow across Africa, we have an opportunity to shape that growth responsibly. At OJIS, we help turn good intentions into informed action by educating travellers, amplifying responsible practices, showcasing practical solutions, and supporting hospitality businesses through professional advisory services.', 'ojis-travels-theme' ); ?></p>
 
-                            <p><?php esc_html_e( 'My background in International Tourism and Hospitality Management and an MSc in Business Management with a specialisation in Hospitality, combined with my professional experience, engagement, and professional training with the Global Sustainable Tourism Council (GSTC), shapes our practical approach to sustainability. Our approach considers people, culture, communities, the environment, business resilience, and long-term value.', 'ojis-travels-theme' ); ?></p>
+                            <p><?php esc_html_e( 'My advanced academic specialization in Hospitality and Tourism, combined with an MSc in Business Management and formal training with the Global Sustainable Tourism Council (GSTC), shapes our practical approach to sustainability. Our approach considers people, culture, communities, the environment, business resilience, and long-term value.', 'ojis-travels-theme' ); ?></p>
 
                             <p><?php esc_html_e( 'Our philosophy is simple: progress over perfection. Every informed choice and responsible action can contribute to a more sustainable future.', 'ojis-travels-theme' ); ?></p>
 
