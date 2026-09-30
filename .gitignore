@@ -20,6 +20,9 @@ dist/
 *.swp
 *.swo
 
+# Kiro IDE snapshots
+.snapshots/
+
 # Secrets / env
 .env
 .env.*
