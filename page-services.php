@@ -38,9 +38,9 @@ get_header(); ?>
     </section>
 
     <!-- ═══════════════════════════════════════════════════════
-         SERVICE 1 — SUSTAINABLE TRAVEL SOLUTIONS
+         SERVICE A — FOR TRAVELERS
     ════════════════════════════════════════════════════════ -->
-    <section class="py-24 bg-offwhite" aria-labelledby="service-travel-heading">
+    <section class="py-24 bg-offwhite" aria-labelledby="service-travelers-heading">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
@@ -48,22 +48,21 @@ get_header(); ?>
                     <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-forest/10 mb-6">
                         <span class="material-symbols-outlined text-forest text-3xl" aria-hidden="true">flight_takeoff</span>
                     </div>
-                    <span class="section-eyebrow"><?php esc_html_e( 'Service 01', 'ojis-travels-theme' ); ?></span>
-                    <h2 id="service-travel-heading" class="section-heading mt-3">
-                        <?php esc_html_e( 'Sustainable Travel Solutions', 'ojis-travels-theme' ); ?>
+                    <span class="section-eyebrow"><?php esc_html_e( 'For Travelers', 'ojis-travels-theme' ); ?></span>
+                    <h2 id="service-travelers-heading" class="section-heading mt-3">
+                        <?php esc_html_e( 'Responsible Travel Experiences', 'ojis-travels-theme' ); ?>
                     </h2>
                     <p class="text-muted leading-relaxed mt-4 mb-8">
-                        <?php esc_html_e( 'We curate responsible travel experiences that respect destinations, support local communities, and minimise environmental footprint. From itinerary design to destination guidance, our travel solutions are built for the conscious traveller.', 'ojis-travels-theme' ); ?>
+                        <?php esc_html_e( 'We help travellers plan meaningful, responsible journeys. Whether you are looking for a sustainable luxury escape, a group trip, or a corporate travel experience, we curate itineraries that respect destinations, support local communities and minimise environmental footprint.', 'ojis-travels-theme' ); ?>
                     </p>
 
                     <?php
-                    $travel_features = [
-                        [ 'icon' => 'map',            'text' => __( 'Curated responsible itineraries across Africa and beyond',              'ojis-travels-theme' ) ],
-                        [ 'icon' => 'groups',         'text' => __( 'Community-centred travel experiences',                                  'ojis-travels-theme' ) ],
-                        [ 'icon' => 'park',           'text' => __( 'Eco-conscious destination and accommodation guidance',                   'ojis-travels-theme' ) ],
-                        [ 'icon' => 'volunteer_activism', 'text' => __( 'Support local businesses and credible sustainable operators',        'ojis-travels-theme' ) ],
+                    $travelers_features = [
+                        [ 'icon' => 'map',     'text' => __( 'Responsible Travel Planning', 'ojis-travels-theme' ) ],
+                        [ 'icon' => 'diamond', 'text' => __( 'Sustainable Luxury Travel',   'ojis-travels-theme' ) ],
+                        [ 'icon' => 'groups',  'text' => __( 'Group & Corporate Travel',    'ojis-travels-theme' ) ],
                     ];
-                    foreach ( $travel_features as $f ) : ?>
+                    foreach ( $travelers_features as $f ) : ?>
                     <div class="flex items-start gap-3 mb-4">
                         <span class="material-symbols-outlined text-eco text-xl mt-0.5 flex-shrink-0" aria-hidden="true"><?php echo esc_html( $f['icon'] ); ?></span>
                         <p class="text-charcoal text-sm leading-relaxed"><?php echo esc_html( $f['text'] ); ?></p>
@@ -94,9 +93,9 @@ get_header(); ?>
     </section>
 
     <!-- ═══════════════════════════════════════════════════════
-         SERVICE 2 — PROFESSIONAL ADVISORY
+         SERVICE B — FOR HOSPITALITY BUSINESSES
     ════════════════════════════════════════════════════════ -->
-    <section class="py-24 bg-white" aria-labelledby="service-advisory-heading">
+    <section class="py-24 bg-white" aria-labelledby="service-hospitality-heading">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
@@ -115,28 +114,31 @@ get_header(); ?>
 
                 <div class="reveal-element">
                     <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-eco/10 mb-6">
-                        <span class="material-symbols-outlined text-eco-alt text-3xl" aria-hidden="true">business_center</span>
+                        <span class="material-symbols-outlined text-eco-alt text-3xl" aria-hidden="true">hotel</span>
                     </div>
-                    <span class="section-eyebrow"><?php esc_html_e( 'Service 02', 'ojis-travels-theme' ); ?></span>
-                    <h2 id="service-advisory-heading" class="section-heading mt-3">
-                        <?php esc_html_e( 'Professional Advisory for Hospitality Businesses', 'ojis-travels-theme' ); ?>
+                    <span class="section-eyebrow"><?php esc_html_e( 'For Hospitality Businesses', 'ojis-travels-theme' ); ?></span>
+                    <h2 id="service-hospitality-heading" class="section-heading mt-3">
+                        <?php esc_html_e( 'Sustainable Hospitality Services', 'ojis-travels-theme' ); ?>
                     </h2>
                     <p class="text-muted leading-relaxed mt-4 mb-8">
-                        <?php esc_html_e( 'We guide African hospitality brands, hotels, lodges, and tour operators toward long-term resilience and value creation. Our advisory services are grounded in GSTC frameworks and real-world implementation experience.', 'ojis-travels-theme' ); ?>
+                        <?php esc_html_e( 'We guide hotels, lodges, resorts and hospitality businesses toward long-term sustainability and resilience. Our services are grounded in GSTC frameworks and real-world implementation experience.', 'ojis-travels-theme' ); ?>
                     </p>
 
                     <?php
-                    $advisory_features = [
-                        [ 'icon' => 'analytics',     'text' => __( 'Sustainability assessments and gap analysis',                                  'ojis-travels-theme' ) ],
-                        [ 'icon' => 'route',         'text' => __( 'Customised sustainability strategy and roadmap development',                    'ojis-travels-theme' ) ],
-                        [ 'icon' => 'checklist',     'text' => __( 'GSTC criteria alignment and certification preparation',                         'ojis-travels-theme' ) ],
-                        [ 'icon' => 'support_agent', 'text' => __( 'Ongoing implementation support and monitoring',                                 'ojis-travels-theme' ) ],
-                        [ 'icon' => 'trending_up',   'text' => __( 'Business resilience planning through responsible operations',                   'ojis-travels-theme' ) ],
+                    $hospitality_features = [
+                        [ 'icon' => 'analytics',     'text' => __( 'Sustainable Hospitality Consulting',            'ojis-travels-theme' ), 'note' => '' ],
+                        [ 'icon' => 'photo_camera',  'text' => __( 'Sustainable Hospitality Content & Storytelling', 'ojis-travels-theme' ), 'note' => '<a href="/sustainable-hospitality-content" class="text-eco-alt underline">Learn more about our content services &rarr;</a>' ],
+                        [ 'icon' => 'verified',      'text' => __( 'Sustainability Certification Support',           'ojis-travels-theme' ), 'note' => '' ],
                     ];
-                    foreach ( $advisory_features as $f ) : ?>
+                    foreach ( $hospitality_features as $f ) : ?>
                     <div class="flex items-start gap-3 mb-4">
                         <span class="material-symbols-outlined text-eco text-xl mt-0.5 flex-shrink-0" aria-hidden="true"><?php echo esc_html( $f['icon'] ); ?></span>
-                        <p class="text-charcoal text-sm leading-relaxed"><?php echo esc_html( $f['text'] ); ?></p>
+                        <div>
+                            <p class="text-charcoal text-sm leading-relaxed"><?php echo esc_html( $f['text'] ); ?></p>
+                            <?php if ( ! empty( $f['note'] ) ) : ?>
+                            <p class="text-xs mt-1"><?php echo wp_kses( $f['note'], [ 'a' => [ 'href' => [], 'class' => [] ] ] ); ?></p>
+                            <?php endif; ?>
+                        </div>
                     </div>
                     <?php endforeach; ?>
 
@@ -151,41 +153,40 @@ get_header(); ?>
     </section>
 
     <!-- ═══════════════════════════════════════════════════════
-         SERVICE 3 — EDUCATION & ADVOCACY
+         SERVICE C — FOR DESTINATIONS & ORGANIZATIONS
     ════════════════════════════════════════════════════════ -->
-    <section class="py-24 bg-offwhite" aria-labelledby="service-education-heading">
+    <section class="py-24 bg-offwhite" aria-labelledby="service-destinations-heading">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
                 <div class="reveal-element">
-                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-blue-50 mb-6">
-                        <span class="material-symbols-outlined text-blue-600 text-3xl" aria-hidden="true">school</span>
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-eco/10 mb-6">
+                        <span class="material-symbols-outlined text-eco-alt text-3xl" aria-hidden="true">language</span>
                     </div>
-                    <span class="section-eyebrow"><?php esc_html_e( 'Service 03', 'ojis-travels-theme' ); ?></span>
-                    <h2 id="service-education-heading" class="section-heading mt-3">
-                        <?php esc_html_e( 'Education & Advocacy', 'ojis-travels-theme' ); ?>
+                    <span class="section-eyebrow"><?php esc_html_e( 'For Destinations & Organizations', 'ojis-travels-theme' ); ?></span>
+                    <h2 id="service-destinations-heading" class="section-heading mt-3">
+                        <?php esc_html_e( 'Sustainable Destination & Strategy Services', 'ojis-travels-theme' ); ?>
                     </h2>
                     <p class="text-muted leading-relaxed mt-4 mb-8">
-                        <?php esc_html_e( 'We build capacity across the tourism and hospitality sector through targeted training, workshops, and thought leadership content that makes sustainability accessible and actionable for all stakeholders.', 'ojis-travels-theme' ); ?>
+                        <?php esc_html_e( 'We work with destinations, tourism boards and organisations to develop practical sustainability strategies, community-based tourism initiatives and long-term destination management frameworks.', 'ojis-travels-theme' ); ?>
                     </p>
 
                     <?php
-                    $education_features = [
-                        [ 'icon' => 'co_present',  'text' => __( 'Corporate sustainability workshops and training programmes',     'ojis-travels-theme' ) ],
-                        [ 'icon' => 'article',     'text' => __( 'Industry insights, guides, and thought leadership content',     'ojis-travels-theme' ) ],
-                        [ 'icon' => 'campaign',    'text' => __( 'Responsible tourism awareness and advocacy campaigns',          'ojis-travels-theme' ) ],
-                        [ 'icon' => 'hub',         'text' => __( 'Stakeholder engagement and partnership facilitation',          'ojis-travels-theme' ) ],
+                    $destinations_features = [
+                        [ 'icon' => 'explore',      'text' => __( 'Sustainable Destination Consulting',   'ojis-travels-theme' ) ],
+                        [ 'icon' => 'diversity_3',  'text' => __( 'Community-Based Tourism Development', 'ojis-travels-theme' ) ],
+                        [ 'icon' => 'trending_up',  'text' => __( 'Sustainable Tourism Strategy',        'ojis-travels-theme' ) ],
                     ];
-                    foreach ( $education_features as $f ) : ?>
+                    foreach ( $destinations_features as $f ) : ?>
                     <div class="flex items-start gap-3 mb-4">
                         <span class="material-symbols-outlined text-eco text-xl mt-0.5 flex-shrink-0" aria-hidden="true"><?php echo esc_html( $f['icon'] ); ?></span>
                         <p class="text-charcoal text-sm leading-relaxed"><?php echo esc_html( $f['text'] ); ?></p>
                     </div>
                     <?php endforeach; ?>
 
-                    <a href="<?php echo esc_url( home_url( '/insights' ) ); ?>" class="btn-primary inline-flex items-center gap-2 mt-6">
-                        <?php esc_html_e( 'Read Our Insights', 'ojis-travels-theme' ); ?>
-                        <span class="material-symbols-outlined text-base" aria-hidden="true">article</span>
+                    <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn-primary inline-flex items-center gap-2 mt-6">
+                        <?php esc_html_e( 'Discuss Your Project', 'ojis-travels-theme' ); ?>
+                        <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_forward</span>
                     </a>
                 </div>
 
@@ -193,33 +194,12 @@ get_header(); ?>
                     <div class="rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
                         <img
                             src="<?php echo esc_url( OJIS_THEME_URI . '/assets/images/services-education.jpg' ); ?>"
-                            alt="<?php esc_attr_e( 'Education and advocacy workshops building capacity in sustainable hospitality', 'ojis-travels-theme' ); ?>"
+                            alt="<?php esc_attr_e( 'Sustainable destination consulting and community-based tourism development', 'ojis-travels-theme' ); ?>"
                             class="w-full h-full object-cover"
                             loading="lazy"
                             width="700"
                             height="525"
                         >
-                    </div>
-                    <!-- Floating capability cards over the image -->
-                    <div class="grid grid-cols-2 gap-3 mt-4">
-                        <?php
-                        $edu_cards = [
-                            [ 'icon' => 'school',    'title' => __( 'Corporate Training',  'ojis-travels-theme' ), 'color' => 'bg-blue-50 text-blue-600' ],
-                            [ 'icon' => 'campaign',  'title' => __( 'Advocacy Campaigns', 'ojis-travels-theme' ), 'color' => 'bg-forest/10 text-forest' ],
-                            [ 'icon' => 'analytics', 'title' => __( 'Impact Assessment',  'ojis-travels-theme' ), 'color' => 'bg-eco/10 text-eco-alt' ],
-                            [ 'icon' => 'article',   'title' => __( 'Thought Leadership', 'ojis-travels-theme' ), 'color' => 'bg-amber-50 text-amber-600' ],
-                        ];
-                        foreach ( $edu_cards as $m => $card ) : ?>
-                        <div
-                            class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 reveal-element"
-                            style="transition-delay: <?php echo esc_attr( $m * 80 ); ?>ms"
-                        >
-                            <div class="inline-flex items-center justify-center w-10 h-10 rounded-xl <?php echo esc_attr( $card['color'] ); ?> mb-3">
-                                <span class="material-symbols-outlined text-lg" aria-hidden="true"><?php echo esc_html( $card['icon'] ); ?></span>
-                            </div>
-                            <h3 class="font-semibold text-charcoal text-sm leading-snug"><?php echo esc_html( $card['title'] ); ?></h3>
-                        </div>
-                        <?php endforeach; ?>
                     </div>
                 </div>
 

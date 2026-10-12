@@ -42,7 +42,7 @@ get_header(); ?>
                 </h1>
 
                 <p class="text-lg sm:text-xl text-white/80 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0 hero-sub">
-                    <?php echo esc_html( get_theme_mod( 'ojis_hero_sub', __( 'Helping tourism and hospitality businesses operate more sustainably — and travellers explore more responsibly.', 'ojis-travels-theme' ) ) ); ?>
+                    <?php echo esc_html( get_theme_mod( 'ojis_hero_sub', __( 'Helping tourism and hospitality businesses, destinations and organizations operate more sustainably — and travellers explore more responsibly.', 'ojis-travels-theme' ) ) ); ?>
                 </p>
 
                 <!-- Dual CTA: For Businesses | For Travelers -->
@@ -110,7 +110,7 @@ get_header(); ?>
     <section class="py-0 bg-offwhite" aria-label="<?php esc_attr_e( 'Services for businesses and travellers', 'ojis-travels-theme' ); ?>">
         <div class="max-w-7xl mx-auto px-6">
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-px bg-gray-200">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-px bg-gray-200">
 
                 <!-- ── For Businesses ─────────────────────── -->
                 <div id="services-businesses" class="bg-offwhite py-20 px-8 lg:px-14 reveal-element">
@@ -127,11 +127,9 @@ get_header(); ?>
                     <p class="text-xs font-semibold uppercase tracking-widest text-muted mb-3"><?php esc_html_e( 'Services include:', 'ojis-travels-theme' ); ?></p>
                     <div class="flex flex-wrap gap-2 mb-8">
                         <?php foreach ( [
-                            __( 'Sustainability Advisory',        'ojis-travels-theme' ),
-                            __( 'Sustainability Assessments',     'ojis-travels-theme' ),
-                            __( 'Strategy & Action Planning',     'ojis-travels-theme' ),
-                            __( 'Staff Awareness & Training',     'ojis-travels-theme' ),
-                            __( 'Responsible Tourism Guidance',   'ojis-travels-theme' ),
+                            __( 'Sustainable Hospitality Consulting',            'ojis-travels-theme' ),
+                            __( 'Sustainable Hospitality Content & Storytelling','ojis-travels-theme' ),
+                            __( 'Sustainability Certification Support',          'ojis-travels-theme' ),
                         ] as $tag ) : ?>
                         <span class="text-xs font-medium text-forest bg-forest/10 border border-forest/15 px-3 py-1.5 rounded-full">
                             <?php echo esc_html( $tag ); ?>
@@ -159,10 +157,9 @@ get_header(); ?>
                     <p class="text-xs font-semibold uppercase tracking-widest text-muted mb-3"><?php esc_html_e( 'Services include:', 'ojis-travels-theme' ); ?></p>
                     <div class="flex flex-wrap gap-2 mb-8">
                         <?php foreach ( [
-                            __( 'Sustainable Travel Consultations',         'ojis-travels-theme' ),
-                            __( 'Personalised Itineraries',                 'ojis-travels-theme' ),
-                            __( 'Responsible Accommodation Recommendations','ojis-travels-theme' ),
-                            __( 'Destination Planning',                     'ojis-travels-theme' ),
+                            __( 'Responsible Travel Planning',       'ojis-travels-theme' ),
+                            __( 'Sustainable Luxury Travel',         'ojis-travels-theme' ),
+                            __( 'Group & Corporate Travel',          'ojis-travels-theme' ),
                         ] as $tag ) : ?>
                         <span class="text-xs font-medium text-eco-alt bg-eco/10 border border-eco/20 px-3 py-1.5 rounded-full">
                             <?php echo esc_html( $tag ); ?>
@@ -171,6 +168,36 @@ get_header(); ?>
                     </div>
                     <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn-eco inline-flex items-center gap-2">
                         <?php esc_html_e( 'Plan Your Journey', 'ojis-travels-theme' ); ?>
+                        <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_forward</span>
+                    </a>
+                </div>
+
+                <!-- ── For Destinations & Organizations ── -->
+                <div id="services-destinations" class="bg-offwhite py-20 px-8 lg:px-14 reveal-element" style="transition-delay:240ms">
+                    <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-eco/10 mb-6">
+                        <span class="material-symbols-outlined text-eco-alt text-2xl" aria-hidden="true">language</span>
+                    </div>
+                    <span class="section-eyebrow mb-4 block"><?php esc_html_e( 'For Destinations & Organizations', 'ojis-travels-theme' ); ?></span>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-charcoal leading-tight mb-4">
+                        <?php esc_html_e( 'Shape sustainable destinations and communities.', 'ojis-travels-theme' ); ?>
+                    </h2>
+                    <p class="text-muted leading-relaxed mb-6">
+                        <?php esc_html_e( 'We work with destinations, tourism boards and organizations to develop practical sustainability strategies, community-based tourism initiatives and long-term destination management frameworks.', 'ojis-travels-theme' ); ?>
+                    </p>
+                    <p class="text-xs font-semibold uppercase tracking-widest text-muted mb-3"><?php esc_html_e( 'Services include:', 'ojis-travels-theme' ); ?></p>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <?php foreach ( [
+                            __( 'Sustainable Destination Consulting',    'ojis-travels-theme' ),
+                            __( 'Community-Based Tourism Development',  'ojis-travels-theme' ),
+                            __( 'Sustainable Tourism Strategy',         'ojis-travels-theme' ),
+                        ] as $tag ) : ?>
+                        <span class="text-xs font-medium text-eco-alt bg-eco/10 border border-eco/20 px-3 py-1.5 rounded-full">
+                            <?php echo esc_html( $tag ); ?>
+                        </span>
+                        <?php endforeach; ?>
+                    </div>
+                    <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn-eco inline-flex items-center gap-2">
+                        <?php esc_html_e( 'Discuss Your Project', 'ojis-travels-theme' ); ?>
                         <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_forward</span>
                     </a>
                 </div>
@@ -304,7 +331,7 @@ get_header(); ?>
                         </div>
 
                         <blockquote class="text-lg text-charcoal leading-relaxed mb-6 font-medium">
-                            <?php echo esc_html( get_theme_mod( 'ojis_founder_quote', __( 'I founded OJIS Travels & Advisory because I believe sustainability should be practical, relevant, and achievable — not complicated or reserved for a select few. Our philosophy is simple: progress over perfection. Every informed choice and responsible action contributes to a more sustainable future.', 'ojis-travels-theme' ) ) ); ?>
+                            <?php echo esc_html( get_theme_mod( 'ojis_founder_quote', __( 'I founded OJIS Travels & Advisory out of a passion for service to humanity and a belief that tourism can be a force for positive change. I believe sustainability in tourism and hospitality, in Africa and beyond, should be practical, relevant, and achievable — not an abstract ideal, but something that can be understood, communicated, and applied in practice.', 'ojis-travels-theme' ) ) ); ?>
                         </blockquote>
 
                         <!-- Philosophy pull-quote -->
