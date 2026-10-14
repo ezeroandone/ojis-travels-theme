@@ -51,10 +51,10 @@ get_header(); ?>
                     </h2>
                     <div class="prose-ojis mt-6 space-y-5">
                         <p>
-                            <?php esc_html_e( 'OJIS Travels & Advisory is a sustainable tourism and hospitality brand making sustainability practical, relevant, and accessible.', 'ojis-travels-theme' ); ?>
+                            <?php esc_html_e( 'OJIS Travels & Advisory is a sustainable tourism and hospitality platform combining advisory, content creation, storytelling, and responsible travel. We help tourism and hospitality businesses turn sustainability into practical action \u2014 and meaningful stories.', 'ojis-travels-theme' ); ?>
                         </p>
                         <p>
-                            <?php esc_html_e( 'With a focus on Africa, we educate, amplify responsible practices, showcase practical solutions, and provide professional advisory services that empower travellers and hospitality businesses to make informed choices and take meaningful action.', 'ojis-travels-theme' ); ?>
+                            <?php esc_html_e( 'Through an African perspective and global outlook, we connect sustainability ideas with local realities \u2014 the people, culture, communities, businesses, and destinations that make tourism meaningful.', 'ojis-travels-theme' ); ?>
                         </p>
                         <p>
                             <?php esc_html_e( 'By choosing OJIS, you are supporting our mission to advance a more responsible, resilient, and sustainable tourism and hospitality industry across Africa and beyond.', 'ojis-travels-theme' ); ?>
@@ -64,9 +64,10 @@ get_header(); ?>
                         <?php
                         $tags = [
                             __( 'Sustainable Tourism',    'ojis-travels-theme' ),
-                            __( 'Hospitality Advisory',  'ojis-travels-theme' ),
-                            __( 'Africa-Focused',        'ojis-travels-theme' ),
-                            __( 'GSTC Trained',          'ojis-travels-theme' ),
+                            __( 'Hospitality Advisory',   'ojis-travels-theme' ),
+                            __( 'Content & Storytelling', 'ojis-travels-theme' ),
+                            __( 'African Perspective',    'ojis-travels-theme' ),
+                            __( 'GSTC Trained',           'ojis-travels-theme' ),
                         ];
                         foreach ( $tags as $tag ) : ?>
                         <span class="inline-block text-xs font-semibold text-forest bg-forest/10 border border-forest/20 px-4 py-2 rounded-full">
@@ -198,11 +199,13 @@ get_header(); ?>
                     <!-- Name & credentials under photo -->
                     <div class="text-center lg:text-left">
                         <p class="text-charcoal font-bold text-lg leading-snug">Omoaghe Jeffrey Edene</p>
-                        <p class="text-forest text-sm font-semibold mt-1"><?php esc_html_e( 'Founder, OJIS Travels & Advisory', 'ojis-travels-theme' ); ?></p>
+                        <p class="text-forest text-sm font-semibold mt-1"><?php esc_html_e( 'Founder & Sustainable Tourism Advisor | Content Creator & Storyteller', 'ojis-travels-theme' ); ?></p>
                         <p class="text-muted text-xs mt-2 leading-relaxed max-w-xs">
+                            <?php esc_html_e( 'BA Theatre & Media Arts', 'ojis-travels-theme' ); ?><br>
                             <?php esc_html_e( 'Master\'s in International Tourism & Hospitality Management', 'ojis-travels-theme' ); ?><br>
                             <?php esc_html_e( 'MSc Business Management (Hospitality Specialisation)', 'ojis-travels-theme' ); ?><br>
-                            <?php esc_html_e( 'Global Sustainable Tourism Council (GSTC) Trained Professional', 'ojis-travels-theme' ); ?>
+                            <?php esc_html_e( 'Global Sustainable Tourism Council (GSTC) Trained Professional', 'ojis-travels-theme' ); ?><br>
+                            <?php esc_html_e( 'Professional Certification in Content Creation', 'ojis-travels-theme' ); ?>
                         </p>
                     </div>
                 </div>
@@ -242,7 +245,7 @@ get_header(); ?>
                                 <span class="font-normal text-muted ml-1">— <?php esc_html_e( 'Founder', 'ojis-travels-theme' ); ?></span>
                             </cite>
                             <span class="text-muted text-xs ml-auto hidden sm:block">
-                                <?php esc_html_e( 'Master\'s in International Tourism & Hospitality Management | MSc Business Management (Hospitality) | Global Sustainable Tourism Council (GSTC) Trained', 'ojis-travels-theme' ); ?>
+                                <?php esc_html_e( 'BA Theatre & Media Arts | Master\'s in International Tourism & Hospitality Management | MSc Business Management (Hospitality) | GSTC Trained | Content Creator', 'ojis-travels-theme' ); ?>
                             </span>
                         </div>
 
@@ -259,19 +262,19 @@ get_header(); ?>
     <section class="py-20 bg-forest" aria-label="<?php esc_attr_e( 'Call to action', 'ojis-travels-theme' ); ?>">
         <div class="max-w-4xl mx-auto px-6 text-center reveal-element">
             <h2 class="text-3xl font-bold text-white mb-4">
-                <?php esc_html_e( 'Ready to Take the Next Step?', 'ojis-travels-theme' ); ?>
+                <?php esc_html_e( 'Ready to Work Together?', 'ojis-travels-theme' ); ?>
             </h2>
             <p class="text-white/70 text-lg mb-8 max-w-xl mx-auto">
-                <?php esc_html_e( 'Whether you are a traveller or a hospitality business, we have the expertise and tools to guide your sustainability journey.', 'ojis-travels-theme' ); ?>
+                <?php esc_html_e( 'Whether you are a hospitality business, a destination, or a traveller, we would love to hear from you.', 'ojis-travels-theme' ); ?>
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="<?php echo esc_url( home_url( '/services' ) ); ?>" class="btn-eco inline-flex items-center gap-2">
-                    <span class="material-symbols-outlined text-base" aria-hidden="true">eco</span>
-                    <?php esc_html_e( 'Explore Services', 'ojis-travels-theme' ); ?>
+                <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn-eco inline-flex items-center gap-2">
+                    <span class="material-symbols-outlined text-base" aria-hidden="true">handshake</span>
+                    <?php esc_html_e( 'Work With OJIS', 'ojis-travels-theme' ); ?>
                 </a>
-                <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn-outline-white inline-flex items-center gap-2">
-                    <span class="material-symbols-outlined text-base" aria-hidden="true">mail</span>
-                    <?php esc_html_e( 'Get in Touch', 'ojis-travels-theme' ); ?>
+                <a href="<?php echo esc_url( home_url( '/advisory' ) ); ?>" class="btn-outline-white inline-flex items-center gap-2">
+                    <span class="material-symbols-outlined text-base" aria-hidden="true">business_center</span>
+                    <?php esc_html_e( 'Explore Advisory Services', 'ojis-travels-theme' ); ?>
                 </a>
             </div>
         </div>
