@@ -147,9 +147,10 @@
             <?php
             $menu_items = [
                 [ 'label' => __( 'Home',     'ojis-travels-theme' ), 'url' => home_url( '/' ) ],
-                [ 'label' => __( 'About Us', 'ojis-travels-theme' ), 'url' => home_url( '/about' ) ],
-                [ 'label' => __( 'Services', 'ojis-travels-theme' ), 'url' => home_url( '/services' ) ],
-                [ 'label' => __( 'Insights', 'ojis-travels-theme' ), 'url' => home_url( '/insights' ) ],
+                [ 'label' => __( 'Advisory', 'ojis-travels-theme' ), 'url' => home_url( '/advisory' ) ],
+                [ 'label' => __( 'Stories',  'ojis-travels-theme' ), 'url' => home_url( '/stories' ) ],
+                [ 'label' => __( 'Travel',   'ojis-travels-theme' ), 'url' => home_url( '/travel' ) ],
+                [ 'label' => __( 'About',    'ojis-travels-theme' ), 'url' => home_url( '/about' ) ],
                 [ 'label' => __( 'Contact',  'ojis-travels-theme' ), 'url' => home_url( '/contact' ) ],
             ];
 
@@ -189,10 +190,10 @@
             <a
                 href="<?php echo esc_url( home_url( '/contact' ) ); ?>"
                 class="header-cta-btn hidden lg:inline-flex items-center gap-2 text-sm"
-                aria-label="<?php esc_attr_e( 'Book an Advisory Consultation', 'ojis-travels-theme' ); ?>"
+                aria-label="<?php esc_attr_e( 'Work with OJIS', 'ojis-travels-theme' ); ?>"
             >
-                <span class="material-symbols-outlined text-base" aria-hidden="true">calendar_month</span>
-                <?php esc_html_e( 'Book a Consultation', 'ojis-travels-theme' ); ?>
+                <span class="material-symbols-outlined text-base" aria-hidden="true">handshake</span>
+                <?php esc_html_e( 'Work With OJIS', 'ojis-travels-theme' ); ?>
             </a>
 
             <!-- Mobile hamburger — hidden at lg and above -->
@@ -229,9 +230,10 @@
                 <?php
                 $mobile_items = [
                     [ 'label' => __( 'Home',     'ojis-travels-theme' ), 'url' => home_url( '/' ),         'icon' => 'home' ],
-                    [ 'label' => __( 'About Us', 'ojis-travels-theme' ), 'url' => home_url( '/about' ),    'icon' => 'info' ],
-                    [ 'label' => __( 'Services', 'ojis-travels-theme' ), 'url' => home_url( '/services' ), 'icon' => 'eco' ],
-                    [ 'label' => __( 'Insights', 'ojis-travels-theme' ), 'url' => home_url( '/insights' ), 'icon' => 'article' ],
+                    [ 'label' => __( 'Advisory', 'ojis-travels-theme' ), 'url' => home_url( '/advisory' ), 'icon' => 'business_center' ],
+                    [ 'label' => __( 'Stories',  'ojis-travels-theme' ), 'url' => home_url( '/stories' ),  'icon' => 'auto_stories' ],
+                    [ 'label' => __( 'Travel',   'ojis-travels-theme' ), 'url' => home_url( '/travel' ),   'icon' => 'flight_takeoff' ],
+                    [ 'label' => __( 'About',    'ojis-travels-theme' ), 'url' => home_url( '/about' ),    'icon' => 'info' ],
                     [ 'label' => __( 'Contact',  'ojis-travels-theme' ), 'url' => home_url( '/contact' ),  'icon' => 'mail' ],
                 ];
                 foreach ( $mobile_items as $item ) :
@@ -254,8 +256,8 @@
                     href="<?php echo esc_url( home_url( '/contact' ) ); ?>"
                     class="btn-primary w-full justify-center inline-flex items-center gap-2"
                 >
-                    <span class="material-symbols-outlined text-base" aria-hidden="true">calendar_month</span>
-                    <?php esc_html_e( 'Book a Consultation', 'ojis-travels-theme' ); ?>
+                    <span class="material-symbols-outlined text-base" aria-hidden="true">handshake</span>
+                    <?php esc_html_e( 'Work With OJIS', 'ojis-travels-theme' ); ?>
                 </a>
             </div>
         </nav>
