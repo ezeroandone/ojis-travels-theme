@@ -122,7 +122,7 @@ get_header(); ?>
                     </div>
                     <h3 class="text-2xl font-bold mb-4"><?php esc_html_e( 'Our Mission', 'ojis-travels-theme' ); ?></h3>
                     <p class="text-white/80 leading-relaxed">
-                        <?php esc_html_e( 'Our mission is to make sustainable tourism and hospitality practical and actionable. Through education, advocacy, responsible travel solutions, and professional advisory, we empower travellers and hospitality businesses, particularly across Africa, to make informed choices, adopt responsible practices, and create lasting value for people, communities, businesses, and destinations.', 'ojis-travels-theme' ); ?>
+                        <?php esc_html_e( 'To make sustainable tourism and hospitality practical, relevant, and actionable through advisory, storytelling, education, and responsible travel.', 'ojis-travels-theme' ); ?>
                     </p>
                 </div>
 
@@ -133,7 +133,7 @@ get_header(); ?>
                     </div>
                     <h3 class="text-2xl font-bold text-charcoal mb-4"><?php esc_html_e( 'Our Vision', 'ojis-travels-theme' ); ?></h3>
                     <p class="text-muted leading-relaxed">
-                        <?php esc_html_e( 'We envision a future where responsible tourism and sustainable hospitality are the standard, not the exception, across Africa and beyond. A future where travellers make informed choices, hospitality businesses thrive responsibly, communities benefit meaningfully from tourism, and destinations are protected and strengthened for generations to come.', 'ojis-travels-theme' ); ?>
+                        <?php esc_html_e( 'A future where responsible tourism and sustainable hospitality create lasting value for people, communities, businesses, and destinations across Africa and beyond.', 'ojis-travels-theme' ); ?>
                     </p>
                 </div>
 
@@ -222,17 +222,25 @@ get_header(); ?>
                         </div>
 
                         <div class="space-y-5 text-charcoal leading-relaxed text-base">
-                            <p><?php esc_html_e( 'Travel has the power to connect people, strengthen communities, preserve culture, and create opportunities. But how we travel and how hospitality businesses operate also matters.', 'ojis-travels-theme' ); ?></p>
+                            <p><?php esc_html_e( 'I founded OJIS Travels & Advisory out of a deep passion for service to humanity, travel, and storytelling — and, above all, a belief that tourism can be a force for positive change.', 'ojis-travels-theme' ); ?></p>
 
-                            <p><?php esc_html_e( 'I founded OJIS Travels & Advisory out of a passion for service to humanity and a belief that tourism can be a force for positive change. I believe sustainability in tourism and hospitality, in Africa and beyond, should be practical, relevant, and achievable — not an abstract ideal, but something that can be understood, communicated, and applied in practice.', 'ojis-travels-theme' ); ?></p>
+                            <p><?php esc_html_e( 'I believe sustainability in tourism and hospitality, in Africa and around the world, should be practical, relevant, and achievable — not an abstract ideal, but something that can be understood, communicated, and applied in practice.', 'ojis-travels-theme' ); ?></p>
 
-                            <p><?php esc_html_e( 'As travel and hospitality continue to grow across Africa, we have an opportunity to shape that growth responsibly. At OJIS, we help turn good intentions into informed action by educating travellers, amplifying responsible practices, showcasing practical solutions, and supporting hospitality businesses through professional advisory services.', 'ojis-travels-theme' ); ?></p>
+                            <p><?php esc_html_e( 'Our philosophy is simple: progress over perfection. Every informed choice, responsible action, and meaningful collaboration can contribute to a more sustainable future.', 'ojis-travels-theme' ); ?></p>
 
-                            <p><?php esc_html_e( 'My advanced academic specialization in Hospitality and Tourism, combined with an MSc in Business Management and formal training with the Global Sustainable Tourism Council (GSTC), shapes our practical approach to sustainability. Our approach considers people, culture, communities, the environment, business resilience, and long-term value.', 'ojis-travels-theme' ); ?></p>
+                            <p><?php esc_html_e( 'As tourism and hospitality continue to grow across Africa and around the world, we have an opportunity to shape that growth responsibly. At OJIS, we help turn good intentions into informed action by supporting tourism and hospitality businesses in strengthening their sustainability practices, communicating their impact, and creating long-term value.', 'ojis-travels-theme' ); ?></p>
 
-                            <p><?php esc_html_e( 'Our philosophy is simple: progress over perfection. Every informed choice and responsible action can contribute to a more sustainable future.', 'ojis-travels-theme' ); ?></p>
+                            <p><?php esc_html_e( 'We also believe that stories have the power to influence how people see places, businesses, communities, and the role of tourism itself. Through purposeful content, compelling storytelling, photography, video, and visual communication, we document and amplify the people, practices, places, and solutions shaping a more responsible and sustainable industry.', 'ojis-travels-theme' ); ?></p>
 
-                            <p><?php esc_html_e( 'When you choose OJIS, you are not simply choosing a travel or advisory service. You are supporting our mission to advance a more responsible, resilient, and sustainable tourism and hospitality industry.', 'ojis-travels-theme' ); ?></p>
+                            <p><?php esc_html_e( 'Through OJIS Perspectives, we share insights and stories from Africa and around the world — exploring sustainable tourism and hospitality through an African perspective and a global outlook. We seek out meaningful examples, share ideas and knowledge, and connect local realities with global conversations about the future of tourism.', 'ojis-travels-theme' ); ?></p>
+
+                            <p><?php esc_html_e( 'For travelers, we provide responsible travel guidance and inspiration to help people make more informed choices about where they stay, how they travel, and the value they create along the way.', 'ojis-travels-theme' ); ?></p>
+
+                            <p><?php esc_html_e( 'Our approach is shaped by an interdisciplinary background spanning Theatre and Media Art, Hospitality and Tourism, and Business Management, complemented by formal training with the Global Sustainable Tourism Council (GSTC) and professional certification in Content Creation. This combination allows us to approach tourism and sustainability through both a strategic and creative lens — considering people, culture, communities, the environment, business resilience, communication, storytelling, and long-term value.', 'ojis-travels-theme' ); ?></p>
+
+                            <p><?php esc_html_e( 'Our perspective is rooted in Africa, but our outlook is global. We tell stories from across the continent and around the world, believing that meaningful sustainable tourism is built by connecting global ideas with local realities, learning across borders, and recognizing the people and communities at the heart of tourism.', 'ojis-travels-theme' ); ?></p>
+
+                            <p><?php esc_html_e( 'We want OJIS to be more than a travel or advisory service. We are building a platform for advisory, storytelling, knowledge-sharing, and responsible travel — one that brings people and ideas together and contributes to a more responsible, resilient, and sustainable tourism and hospitality industry.', 'ojis-travels-theme' ); ?></p>
 
                             <p class="font-semibold text-forest"><?php esc_html_e( 'Because the future of travel is not only about where we go, but also about the value we create along the way.', 'ojis-travels-theme' ); ?></p>
                         </div>
