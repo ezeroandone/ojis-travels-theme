@@ -115,7 +115,7 @@ get_header(); ?>
                     <?php esc_html_e( 'For Tourism &amp; Hospitality Businesses', 'ojis-travels-theme' ); ?>
                 </h2>
                 <p class="text-muted leading-relaxed mb-8 max-w-3xl text-lg">
-                    <?php esc_html_e( 'Turn sustainability into action \u2014 and action into a story. OJIS combines advisory expertise with content creation and storytelling to help hospitality businesses strengthen their practices and communicate the value of what they do.', 'ojis-travels-theme' ); ?>
+                    <?php esc_html_e( 'Turn sustainability into action — and action into a story. OJIS combines advisory expertise with content creation and storytelling to help hospitality businesses strengthen their practices and communicate the value of what they do.', 'ojis-travels-theme' ); ?>
                 </p>
                 <div class="flex flex-wrap gap-3 mb-10">
                     <?php foreach ( [
@@ -192,61 +192,6 @@ get_header(); ?>
                     </a>
                 </div>
                 <?php endforeach; ?>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════
-         SECTION 3 — BRAND PHILOSOPHY + IMPACT COUNTERS (unified)
-    ════════════════════════════════════════════════════════ -->
-    <section class="bg-forest relative overflow-hidden" aria-labelledby="philosophy-heading">
-        <div class="absolute inset-0 hero-pattern opacity-5" aria-hidden="true"></div>
-
-        <!-- Philosophy headline block -->
-        <div class="relative max-w-5xl mx-auto px-6 pt-20 pb-14 text-center reveal-element">
-            <span class="section-eyebrow-light mb-6 block"><?php esc_html_e( 'Our Philosophy', 'ojis-travels-theme' ); ?></span>
-            <h2 id="philosophy-heading" class="text-3xl sm:text-4xl font-bold text-white mb-6 leading-tight">
-                <?php esc_html_e( 'Progress Over Perfection', 'ojis-travels-theme' ); ?>
-            </h2>
-            <p class="text-white/80 text-lg leading-relaxed mb-6 max-w-3xl mx-auto">
-                <?php esc_html_e( 'Whether we are helping a hotel improve its operations or helping a traveller make more responsible choices, our goal remains the same:', 'ojis-travels-theme' ); ?>
-            </p>
-            <p class="text-eco font-semibold text-xl mb-8">
-                <?php esc_html_e( 'To make sustainable tourism practical, relevant and accessible.', 'ojis-travels-theme' ); ?>
-            </p>
-            <div class="inline-flex items-center gap-3 bg-white/10 border border-white/20 rounded-2xl px-8 py-4">
-                <span class="material-symbols-outlined text-eco text-xl" aria-hidden="true">public</span>
-                <span class="text-white font-medium text-sm tracking-wide">
-                    <?php esc_html_e( 'African Perspective. Global Outlook. Local Impact.', 'ojis-travels-theme' ); ?>
-                </span>
-            </div>
-        </div>
-
-        <!-- Impact counters — directly inside the philosophy section, no separate section -->
-        <div class="relative border-t border-white/10 bg-charcoal/30 py-16">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-                    <?php
-                    $counters = [
-                        [ 'end' => get_theme_mod( 'ojis_counter_1_value', '3' ),    'suffix' => get_theme_mod( 'ojis_counter_1_suffix', '+' ),  'label' => get_theme_mod( 'ojis_counter_1_label', __( 'Core Service Areas',       'ojis-travels-theme' ) ), 'icon' => 'category'  ],
-                        [ 'end' => get_theme_mod( 'ojis_counter_2_value', '100' ),  'suffix' => get_theme_mod( 'ojis_counter_2_suffix', '%' ),  'label' => get_theme_mod( 'ojis_counter_2_label', __( 'Africa-Focused Approach',  'ojis-travels-theme' ) ), 'icon' => 'public'    ],
-                        [ 'end' => get_theme_mod( 'ojis_counter_3_value', '1' ),    'suffix' => get_theme_mod( 'ojis_counter_3_suffix', '' ),   'label' => get_theme_mod( 'ojis_counter_3_label', __( 'GSTC Trained Founder',     'ojis-travels-theme' ) ), 'icon' => 'school'    ],
-                        [ 'end' => get_theme_mod( 'ojis_counter_4_value', '2024' ), 'suffix' => get_theme_mod( 'ojis_counter_4_suffix', '' ),   'label' => get_theme_mod( 'ojis_counter_4_label', __( 'Year of Full Operations',  'ojis-travels-theme' ) ), 'icon' => 'event',    'raw' => true ],
-                    ];
-                    foreach ( $counters as $k => $counter ) : ?>
-                    <div class="reveal-element" style="transition-delay: <?php echo esc_attr( $k * 100 ); ?>ms">
-                        <span class="material-symbols-outlined text-eco text-3xl mb-3 block" aria-hidden="true"><?php echo esc_html( $counter['icon'] ); ?></span>
-                        <div
-                            class="impact-counter text-5xl font-bold text-white mb-2"
-                            data-end="<?php echo esc_attr( $counter['end'] ); ?>"
-                            data-suffix="<?php echo esc_attr( $counter['suffix'] ); ?>"
-                            <?php if ( ! empty( $counter['raw'] ) ) : ?>data-raw="true"<?php endif; ?>
-                            aria-label="<?php echo esc_attr( $counter['end'] . $counter['suffix'] . ' ' . $counter['label'] ); ?>"
-                        >0</div>
-                        <p class="text-white/70 text-sm"><?php echo esc_html( $counter['label'] ); ?></p>
-                    </div>
-                    <?php endforeach; ?>
-                </div>
             </div>
         </div>
     </section>
@@ -345,6 +290,31 @@ get_header(); ?>
                 </div>
             </div>
 
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION — OUR PHILOSOPHY (after Founder)
+    ════════════════════════════════════════════════════════ -->
+    <section class="bg-forest relative overflow-hidden" aria-labelledby="philosophy-heading">
+        <div class="absolute inset-0 hero-pattern opacity-5" aria-hidden="true"></div>
+        <div class="relative max-w-5xl mx-auto px-6 pt-20 pb-20 text-center reveal-element">
+            <span class="section-eyebrow-light mb-6 block"><?php esc_html_e( 'Our Philosophy', 'ojis-travels-theme' ); ?></span>
+            <h2 id="philosophy-heading" class="text-3xl sm:text-4xl font-bold text-white mb-6 leading-tight">
+                <?php esc_html_e( 'Progress Over Perfection', 'ojis-travels-theme' ); ?>
+            </h2>
+            <p class="text-white/80 text-lg leading-relaxed mb-6 max-w-3xl mx-auto">
+                <?php esc_html_e( 'Whether we are helping a hotel improve its operations or helping a traveller make more responsible choices, our goal remains the same:', 'ojis-travels-theme' ); ?>
+            </p>
+            <p class="text-eco font-semibold text-xl mb-8">
+                <?php esc_html_e( 'To make sustainable tourism practical, relevant and accessible.', 'ojis-travels-theme' ); ?>
+            </p>
+            <div class="inline-flex items-center gap-3 bg-white/10 border border-white/20 rounded-2xl px-8 py-4">
+                <span class="material-symbols-outlined text-eco text-xl" aria-hidden="true">public</span>
+                <span class="text-white font-medium text-sm tracking-wide">
+                    <?php esc_html_e( 'African Perspective. Global Outlook. Local Impact.', 'ojis-travels-theme' ); ?>
+                </span>
+            </div>
         </div>
     </section>
 
@@ -459,7 +429,7 @@ get_header(); ?>
             <div class="reveal-element">
                 <span class="material-symbols-outlined text-eco text-5xl mb-6 block" aria-hidden="true">handshake</span>
                 <h2 id="final-cta-heading" class="text-3xl sm:text-4xl font-bold text-white mb-4">
-                    <?php esc_html_e( 'Let\'s create more responsible tourism \u2014 one practical step at a time.', 'ojis-travels-theme' ); ?>
+                    <?php esc_html_e( 'Let\'s create more responsible tourism — one practical step at a time.', 'ojis-travels-theme' ); ?>
                 </h2>
                 <p class="text-white/70 text-lg mb-10 leading-relaxed">
                     <?php esc_html_e( 'Whether you are a hospitality business, a destination, or a traveller, we have the expertise to support your sustainability journey.', 'ojis-travels-theme' ); ?>
