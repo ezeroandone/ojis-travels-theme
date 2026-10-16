@@ -199,13 +199,8 @@ get_header(); ?>
                     <!-- Name & credentials under photo -->
                     <div class="text-center lg:text-left">
                         <p class="text-charcoal font-bold text-lg leading-snug">Omoaghe Jeffrey Edene</p>
-                        <p class="text-forest text-sm font-semibold mt-1"><?php esc_html_e( 'Founder & Sustainable Tourism Advisor | Content Creator & Storyteller', 'ojis-travels-theme' ); ?></p>
+                        <p class="text-forest text-sm font-semibold mt-1"><?php esc_html_e( 'Founder & Sustainable Tourism & Hospitality Advisor | Creator & Storyteller', 'ojis-travels-theme' ); ?></p>
                         <p class="text-muted text-xs mt-2 leading-relaxed max-w-xs">
-                            <?php esc_html_e( 'BA Theatre & Media Arts', 'ojis-travels-theme' ); ?><br>
-                            <?php esc_html_e( 'Master\'s in International Tourism & Hospitality Management', 'ojis-travels-theme' ); ?><br>
-                            <?php esc_html_e( 'MSc Business Management (Hospitality Specialisation)', 'ojis-travels-theme' ); ?><br>
-                            <?php esc_html_e( 'Global Sustainable Tourism Council (GSTC) Trained Professional', 'ojis-travels-theme' ); ?><br>
-                            <?php esc_html_e( 'Professional Certification in Content Creation', 'ojis-travels-theme' ); ?>
                         </p>
                     </div>
                 </div>

@@ -112,7 +112,7 @@ get_header(); ?>
             <div class="reveal-element">
                 <span class="section-eyebrow mb-4 block"><?php esc_html_e( 'Who We Help', 'ojis-travels-theme' ); ?></span>
                 <h2 id="who-we-help-heading" class="text-3xl sm:text-4xl font-bold text-charcoal leading-tight mb-6">
-                    <?php esc_html_e( 'For Tourism &amp; Hospitality Businesses', 'ojis-travels-theme' ); ?>
+                    <?php esc_html_e( 'Tourism & Hospitality Businesses', 'ojis-travels-theme' ); ?>
                 </h2>
                 <p class="text-muted leading-relaxed mb-8 max-w-3xl text-lg">
                     <?php esc_html_e( 'Turn sustainability into action — and action into a story. OJIS combines advisory expertise with content creation and storytelling to help hospitality businesses strengthen their practices and communicate the value of what they do.', 'ojis-travels-theme' ); ?>
@@ -234,25 +234,10 @@ get_header(); ?>
 
                         <div>
                             <p class="text-white font-bold text-lg leading-snug"><?php echo esc_html( get_theme_mod( 'ojis_founder_name', 'Omoaghe Jeffrey Edene' ) ); ?></p>
-                            <p class="text-eco text-sm font-semibold mt-1"><?php echo esc_html( get_theme_mod( 'ojis_founder_title', __( 'Sustainable Tourism & Hospitality Advisor | Content Creator & Storyteller', 'ojis-travels-theme' ) ) ); ?></p>
+                            <p class="text-eco text-sm font-semibold mt-1"><?php echo esc_html( get_theme_mod( 'ojis_founder_title', __( 'Founder & Sustainable Tourism & Hospitality Advisor | Creator & Storyteller', 'ojis-travels-theme' ) ) ); ?></p>
                             <p class="text-white/60 text-xs mt-2 leading-relaxed">
                                 <?php esc_html_e( 'OJIS Travels & Advisory', 'ojis-travels-theme' ); ?>
                             </p>
-                        </div>
-
-                        <!-- Credentials badges -->
-                        <div class="flex flex-wrap justify-center gap-2 mt-2">
-                            <?php foreach ( [
-                                'BA Theatre & Media Arts',
-                                'Master\'s in International Tourism & Hospitality Management',
-                                'MSc Business Management (Hospitality)',
-                                'GSTC-Trained Professional',
-                                'Professional Certification in Content Creation',
-                            ] as $cred ) : ?>
-                            <span class="text-xs text-white/70 bg-white/10 border border-white/15 px-3 py-1 rounded-full">
-                                <?php echo esc_html( $cred ); ?>
-                            </span>
-                            <?php endforeach; ?>
                         </div>
 
                     </div>
@@ -339,9 +324,9 @@ get_header(); ?>
 
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 reveal-element">
                 <div>
-                    <span class="section-eyebrow"><?php esc_html_e( 'Stay Informed', 'ojis-travels-theme' ); ?></span>
+                    <span class="section-eyebrow"><?php esc_html_e( 'OJIS Perspectives', 'ojis-travels-theme' ); ?></span>
                     <h2 id="insights-heading" class="section-heading mt-2">
-                        <?php esc_html_e( 'Latest Insights', 'ojis-travels-theme' ); ?>
+                        <?php esc_html_e( 'OJIS Perspectives', 'ojis-travels-theme' ); ?>
                     </h2>
                 </div>
                 <a

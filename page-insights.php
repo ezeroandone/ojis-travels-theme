@@ -29,7 +29,7 @@ get_header(); ?>
         <div class="relative max-w-7xl mx-auto px-6 pt-36 pb-20 text-center w-full">
             <span class="section-eyebrow-light"><?php esc_html_e( 'Perspectives & Analysis', 'ojis-travels-theme' ); ?></span>
             <h1 class="text-4xl sm:text-5xl font-bold text-white mt-3 mb-6">
-                <?php echo esc_html( $insights_headline ?: __( 'Insights', 'ojis-travels-theme' ) ); ?>
+                <?php echo esc_html( $insights_headline ?: __( 'OJIS Perspectives', 'ojis-travels-theme' ) ); ?>
             </h1>
             <p class="text-white/75 text-lg max-w-2xl mx-auto leading-relaxed">
                 <?php echo esc_html( $insights_sub ?: __( 'Sustainable tourism updates, hospitality industry analysis, and practical knowledge for responsible travel and business.', 'ojis-travels-theme' ) ); ?>

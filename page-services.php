@@ -53,15 +53,13 @@ get_header(); ?>
                         <?php esc_html_e( 'Sustainable Hospitality Advisory', 'ojis-travels-theme' ); ?>
                     </h2>
                     <p class="text-muted leading-relaxed mt-4 mb-8">
-                        <?php esc_html_e( 'We guide hotels, lodges, resorts and hospitality businesses toward long-term sustainability and resilience. Our services are grounded in GSTC frameworks and practical implementation experience.', 'ojis-travels-theme' ); ?>
+                        <?php esc_html_e( 'We help hotels, lodges, resorts, and hospitality businesses strengthen their sustainability practices and build long-term resilience. Our approach combines guidance informed by the Global Sustainable Tourism Council (GSTC) criteria with practical, actionable solutions tailored to each business.', 'ojis-travels-theme' ); ?>
                     </p>
                     <?php
                     $advisory_features = [
                         [ 'icon' => 'analytics', 'text' => __( 'Sustainability assessments and gap analysis',        'ojis-travels-theme' ) ],
                         [ 'icon' => 'route',     'text' => __( 'Strategy and action planning',                       'ojis-travels-theme' ) ],
                         [ 'icon' => 'checklist', 'text' => __( 'Practical implementation guidance',                  'ojis-travels-theme' ) ],
-                        [ 'icon' => 'public',    'text' => __( 'SDG alignment and responsible operations',           'ojis-travels-theme' ) ],
-                        [ 'icon' => 'verified',  'text' => __( 'Sustainability certification readiness and support', 'ojis-travels-theme' ) ],
                         [ 'icon' => 'school',    'text' => __( 'Staff awareness and training',                       'ojis-travels-theme' ) ],
                     ];
                     foreach ( $advisory_features as $f ) : ?>
@@ -122,7 +120,7 @@ get_header(); ?>
                         <?php esc_html_e( 'Hospitality Content &amp; Storytelling', 'ojis-travels-theme' ); ?>
                     </h2>
                     <p class="text-muted leading-relaxed mt-4 mb-8">
-                        <?php esc_html_e( 'We create authentic visual content and compelling stories that help sustainable hospitality and tourism businesses communicate their value, connect with conscious travelers, and showcase the people, places, and practices behind their brand.', 'ojis-travels-theme' ); ?>
+                        <?php esc_html_e( 'We create authentic visual content and compelling stories that help sustainable tourism and hospitality businesses communicate their value, connect with conscious travelers, and showcase the people, places, and practices that make their work meaningful.', 'ojis-travels-theme' ); ?>
                     </p>
                     <?php
                     $content_features = [
@@ -164,7 +162,7 @@ get_header(); ?>
                         <?php esc_html_e( 'Responsible Travel Advisory', 'ojis-travels-theme' ); ?>
                     </h2>
                     <p class="text-muted leading-relaxed mt-4 mb-8">
-                        <?php esc_html_e( 'We help travellers plan meaningful, responsible journeys. From personalised consultations to curated itineraries, we design travel experiences that respect destinations, support local communities, and minimise environmental impact.', 'ojis-travels-theme' ); ?>
+                        <?php esc_html_e( 'We help travelers plan meaningful and responsible journeys through personalized consultations and curated itineraries. Our approach encourages informed travel choices, supports local communities, respects destinations, and seeks to minimize environmental impact.', 'ojis-travels-theme' ); ?>
                     </p>
                     <?php
                     $travel_features = [
