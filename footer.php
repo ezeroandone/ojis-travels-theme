@@ -92,17 +92,31 @@
                     if ( has_nav_menu( 'footer' ) ) {
                         wp_nav_menu( [
                             'theme_location' => 'footer',
-                            'menu_class'     => 'flex flex-col gap-3',
                             'container'      => false,
                             'fallback_cb'    => false,
-                            'items_wrap'     => '<ul class="%2$s">%3$s</ul>',
+                            'items_wrap'     => '<ul class="flex flex-col gap-3">%3$s</ul>',
+                            'link_before'    => '<span class="footer-arrow-icon material-symbols-outlined text-sm text-eco flex-shrink-0" aria-hidden="true">arrow_forward_ios</span>',
+                            'link_after'     => '',
+                            'before'         => '',
+                            'after'          => '',
+                            'walker'         => new class extends Walker_Nav_Menu {
+                                function start_el( &$output, $data_object, $depth = 0, $args = null, $current_object_id = 0 ) {
+                                    $url   = esc_url( $data_object->url );
+                                    $title = esc_html( $data_object->title );
+                                    $output .= '<li><a href="' . $url . '" class="footer-link footer-arrow-link flex items-center gap-2">'
+                                             . '<span class="footer-arrow-icon material-symbols-outlined text-sm text-eco flex-shrink-0" aria-hidden="true">arrow_forward_ios</span>'
+                                             . $title
+                                             . '</a></li>';
+                                }
+                            },
                         ] );
                     } else {
                         $footer_links = [
                             [ 'label' => __( 'Home',     'ojis-travels-theme' ), 'url' => home_url( '/' ) ],
-                            [ 'label' => __( 'About Us', 'ojis-travels-theme' ), 'url' => home_url( '/about' ) ],
-                            [ 'label' => __( 'Services', 'ojis-travels-theme' ), 'url' => home_url( '/services' ) ],
-                            [ 'label' => __( 'Insights', 'ojis-travels-theme' ), 'url' => home_url( '/insights' ) ],
+                            [ 'label' => __( 'About',    'ojis-travels-theme' ), 'url' => home_url( '/about' ) ],
+                            [ 'label' => __( 'Advisory', 'ojis-travels-theme' ), 'url' => home_url( '/advisory' ) ],
+                            [ 'label' => __( 'Stories',  'ojis-travels-theme' ), 'url' => home_url( '/stories' ) ],
+                            [ 'label' => __( 'Travel',   'ojis-travels-theme' ), 'url' => home_url( '/travel' ) ],
                             [ 'label' => __( 'Contact',  'ojis-travels-theme' ), 'url' => home_url( '/contact' ) ],
                         ];
                         echo '<ul class="flex flex-col gap-3">';
@@ -127,21 +141,20 @@
                 <ul class="flex flex-col gap-3" role="list">
                     <?php
                     $services = [
-                        __( 'Sustainable Travel Solutions', 'ojis-travels-theme' ),
-                        __( 'Hospitality Advisory',         'ojis-travels-theme' ),
-                        __( 'Corporate Training',           'ojis-travels-theme' ),
-                        __( 'Impact Assessment',            'ojis-travels-theme' ),
-                        __( 'Education & Advocacy',         'ojis-travels-theme' ),
+                        [ 'label' => __( 'Sustainable Hospitality Advisory',          'ojis-travels-theme' ), 'url' => home_url( '/advisory' ) ],
+                        [ 'label' => __( 'Hospitality Content & Storytelling',        'ojis-travels-theme' ), 'url' => home_url( '/advisory' ) ],
+                        [ 'label' => __( 'Responsible Travel Advisory',               'ojis-travels-theme' ), 'url' => home_url( '/travel' ) ],
+                        [ 'label' => __( 'Sustainable Hospitality Content',           'ojis-travels-theme' ), 'url' => home_url( '/sustainable-hospitality-content' ) ],
                     ];
                     foreach ( $services as $service ) :
                     ?>
                     <li>
                         <a
-                            href="<?php echo esc_url( home_url( '/services' ) ); ?>"
+                            href="<?php echo esc_url( $service['url'] ); ?>"
                             class="footer-link footer-arrow-link flex items-start gap-2"
                         >
                             <span class="footer-arrow-icon material-symbols-outlined text-sm text-eco mt-0.5 flex-shrink-0" aria-hidden="true">arrow_forward_ios</span>
-                            <?php echo esc_html( $service ); ?>
+                            <?php echo esc_html( $service['label'] ); ?>
                         </a>
                     </li>
                     <?php endforeach; ?>
