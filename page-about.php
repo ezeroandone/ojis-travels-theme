@@ -51,10 +51,10 @@ get_header(); ?>
                     </h2>
                     <div class="prose-ojis mt-6 space-y-5">
                         <p>
-                            <?php esc_html_e( 'OJIS Travels & Advisory is a sustainable tourism and hospitality platform combining advisory, content creation, storytelling, and responsible travel. We help tourism and hospitality businesses turn sustainability into practical action \u2014 and meaningful stories.', 'ojis-travels-theme' ); ?>
+                            <?php esc_html_e( 'OJIS Travels & Advisory is a sustainable tourism and hospitality platform combining advisory, content creation, storytelling, and responsible travel. We help tourism and hospitality businesses turn sustainability into practical action — and meaningful stories.', 'ojis-travels-theme' ); ?>
                         </p>
                         <p>
-                            <?php esc_html_e( 'Through an African perspective and global outlook, we connect sustainability ideas with local realities \u2014 the people, culture, communities, businesses, and destinations that make tourism meaningful.', 'ojis-travels-theme' ); ?>
+                            <?php esc_html_e( 'Through an African perspective and global outlook, we connect sustainability ideas with local realities — the people, culture, communities, businesses, and destinations that make tourism meaningful.', 'ojis-travels-theme' ); ?>
                         </p>
                         <p>
                             <?php esc_html_e( 'By choosing OJIS, you are supporting our mission to advance a more responsible, resilient, and sustainable tourism and hospitality industry across Africa and beyond.', 'ojis-travels-theme' ); ?>
@@ -248,7 +248,7 @@ get_header(); ?>
                                 <span class="font-normal text-muted ml-1">— <?php esc_html_e( 'Founder', 'ojis-travels-theme' ); ?></span>
                             </cite>
                             <span class="text-muted text-xs ml-auto hidden sm:block">
-                                <?php esc_html_e( 'BA Theatre & Media Arts | Master\'s in International Tourism & Hospitality Management | MSc Business Management (Hospitality) | GSTC Trained | Content Creator', 'ojis-travels-theme' ); ?>
+                                <?php esc_html_e( 'BA Theatre & Media Arts | Master\'s in International Tourism & Hospitality Management | MSc Business Management (Hospitality) | GSTC-Trained Professional | Professional Certification in Content Creation', 'ojis-travels-theme' ); ?>
                             </span>
                         </div>
 
