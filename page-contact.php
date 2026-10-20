@@ -240,12 +240,12 @@ get_header(); ?>
                                         aria-required="true"
                                     >
                                         <option value="" disabled selected><?php esc_html_e( 'Select your inquiry type', 'ojis-travels-theme' ); ?></option>
-                                        <option value="Advisory Consultation"><?php esc_html_e( 'Advisory Consultation',      'ojis-travels-theme' ); ?></option>
-                                        <option value="Sustainable Travel"><?php esc_html_e( 'Sustainable Travel Planning',   'ojis-travels-theme' ); ?></option>
-                                        <option value="Corporate Training"><?php esc_html_e( 'Corporate Training Programme',  'ojis-travels-theme' ); ?></option>
-                                        <option value="Impact Assessment"><?php esc_html_e( 'Impact Assessment',             'ojis-travels-theme' ); ?></option>
-                                        <option value="Partnership"><?php esc_html_e( 'Partnership Opportunity',             'ojis-travels-theme' ); ?></option>
-                                        <option value="General Inquiry"><?php esc_html_e( 'General Inquiry',                 'ojis-travels-theme' ); ?></option>
+                                        <option value="Sustainable Hospitality Advisory"><?php esc_html_e( 'Sustainable Hospitality Advisory',       'ojis-travels-theme' ); ?></option>
+                                        <option value="Hospitality Content & Storytelling"><?php esc_html_e( 'Hospitality Content & Storytelling',   'ojis-travels-theme' ); ?></option>
+                                        <option value="Responsible Travel Advisory"><?php esc_html_e( 'Responsible Travel Advisory',                 'ojis-travels-theme' ); ?></option>
+                                        <option value="OJIS Perspectives / Stories"><?php esc_html_e( 'OJIS Perspectives / Stories',                 'ojis-travels-theme' ); ?></option>
+                                        <option value="Partnership Opportunity"><?php esc_html_e( 'Partnership Opportunity',                         'ojis-travels-theme' ); ?></option>
+                                        <option value="General Inquiry"><?php esc_html_e( 'General Inquiry',                                         'ojis-travels-theme' ); ?></option>
                                     </select>
                                     <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-muted text-xl pointer-events-none" aria-hidden="true">expand_more</span>
                                 </div>
