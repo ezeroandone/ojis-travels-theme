@@ -234,7 +234,7 @@ get_header(); ?>
 
                         <div>
                             <p class="text-white font-bold text-lg leading-snug"><?php echo esc_html( get_theme_mod( 'ojis_founder_name', 'Omoaghe Jeffrey Edene' ) ); ?></p>
-                            <p class="text-eco text-sm font-semibold mt-1"><?php echo esc_html( get_theme_mod( 'ojis_founder_title', __( 'Founder & Sustainable Tourism & Hospitality Advisor | Creator & Storyteller', 'ojis-travels-theme' ) ) ); ?></p>
+                            <p class="text-eco text-sm font-semibold mt-1"><?php echo esc_html( get_theme_mod( 'ojis_founder_title', __( 'Founder | Sustainable Tourism & Hospitality Advisor | Creator & Storyteller', 'ojis-travels-theme' ) ) ); ?></p>
                             <p class="text-white/60 text-xs mt-2 leading-relaxed">
                                 <?php esc_html_e( 'OJIS Travels & Advisory', 'ojis-travels-theme' ); ?>
                             </p>
@@ -252,9 +252,10 @@ get_header(); ?>
                             </svg>
                         </div>
 
-                        <blockquote class="text-lg text-charcoal leading-relaxed mb-6 font-medium">
-                            <?php echo esc_html( get_theme_mod( 'ojis_founder_quote', __( 'I founded OJIS Travels & Advisory out of a passion for service to humanity and a belief that tourism can be a force for positive change. I believe sustainability in tourism and hospitality, in Africa and beyond, should be practical, relevant, and achievable — not an abstract ideal, but something that can be understood, communicated, and applied in practice.', 'ojis-travels-theme' ) ) ); ?>
-                        </blockquote>
+                        <div class="space-y-4 text-lg text-charcoal leading-relaxed mb-6 font-medium">
+                            <p><?php esc_html_e( 'I founded OJIS Travels & Advisory out of a deep passion for service to humanity, travel, and storytelling — and, above all, a belief that tourism can be a force for positive change.', 'ojis-travels-theme' ); ?></p>
+                            <p><?php esc_html_e( 'I believe sustainability in tourism and hospitality, in Africa and around the world, should be practical, relevant, and achievable — not an abstract ideal, but something that can be understood, communicated, and applied in practice.', 'ojis-travels-theme' ); ?></p>
+                        </div>
 
                         <!-- Philosophy pull-quote -->
                         <div class="border-l-4 border-eco pl-5 mb-8">
